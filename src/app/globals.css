@@ -8,6 +8,7 @@
   --font-poppins: var(--font-poppins);
   --font-noto-sans: var(--font-notosans);
   --font-kave-haffer: var(--font-kave-haffer);
+  --font-kave-haffertext: var(--font-kave-haffertext)
 
   /* Primary Colors */
   --color-primary: #000;
@@ -75,7 +76,11 @@
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+        font-family: var(--font-poppins), sans-serif;
+
+    
   }
+
 
   body {
     @apply font-poppins bg-neutral-00 text-neutral-100;
