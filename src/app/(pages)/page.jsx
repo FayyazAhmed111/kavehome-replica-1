@@ -1,7 +1,7 @@
 "use client"
 
+import HomeCategoriesSection from "@/components/HomeCategoriesSection"
 import { motion } from "framer-motion"
-
 const Carousel = () => {
   const slides = [
     {
@@ -16,8 +16,8 @@ const Carousel = () => {
     },
     {
       id: 2,
-      title: "Summer Collection",
-      subtitle: "Bright and airy designs for your outdoor spaces.",
+      title: "Selected Collection",
+      subtitle: "The value of what endures.",
       bg: "bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500",
       media: "video",
       src: "/video/slide-2.webm",
@@ -25,8 +25,8 @@ const Carousel = () => {
     },
     {
       id: 3,
-      title: "Modern Living",
-      subtitle: "Contemporary furniture for the modern home.",
+      title: "For Every Season",
+      subtitle: "A tribute to the classics that are here to stay.",
       bg: "bg-gradient-to-br from-gray-700 via-gray-600 to-gray-800",
       media: "image",
       src: "/images/slide-3.avif",
@@ -35,8 +35,8 @@ const Carousel = () => {
     },
     {
       id: 4,
-      title: "Minimalist Style",
-      subtitle: "Less is more with our minimalist collection.",
+      title: "Here to Stay",
+      subtitle: "Some things in life you’ll hold on to forever.",
       bg: "bg-gradient-to-br from-slate-300 via-slate-200 to-slate-400",
       media: "image",
       src: "/images/slide-4.avif",
@@ -45,8 +45,8 @@ const Carousel = () => {
     },
     {
       id: 5,
-      title: "Luxury Comfort",
-      subtitle: "Premium materials and exceptional craftsmanship.",
+      title: "Outdoor",
+      subtitle: "An outdoor space for all seasons",
       bg: "bg-gradient-to-br from-purple-900 via-purple-800 to-purple-950",
       media: "image",
       src: "/images/slide-5.avif",
@@ -55,8 +55,8 @@ const Carousel = () => {
     },
     {
       id: 6,
-      title: "Eco Friendly",
-      subtitle: "Sustainable furniture for a better tomorrow.",
+      title: "Our stores",
+      subtitle: "A unique brand experience",
       bg: "bg-gradient-to-br from-green-700 via-green-600 to-green-800",
       media: "image",
       src: "/images/slide-6.avif",
@@ -65,8 +65,8 @@ const Carousel = () => {
     },
     {
       id: 7,
-      title: "Timeless Classics",
-      subtitle: "Iconic designs that never go out of style.",
+      title: "Kave Gallery",
+      subtitle: "A project that all started with a desire to preserve Mediterranean stories through art.",
       bg: "bg-gradient-to-br from-rose-900 via-rose-800 to-rose-950",
       media: "video",
       src: "/video/slide-7.webm",
@@ -144,6 +144,7 @@ const Carousel = () => {
           </div>
         </section>
       ))}
+      <HomeCategoriesSection />
     </div>
   )
 }
