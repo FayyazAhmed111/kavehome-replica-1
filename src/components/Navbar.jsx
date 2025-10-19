@@ -226,27 +226,29 @@ export default function KaveHomeHeaderReplica() {
                     </button>
                     <AnimatePresence>
                       {accountOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 6 }}
-                          className="absolute right-0 mt-3 w-[300px] bg-white shadow-xl border border-black/10 rounded-sm p-4"
-                        >
-                          <a
-                            href="#login"
-                            className="block w-full text-center font-semibold bg-[#2c2e29] text-white rounded-sm py-2"
-                          >
-                            Log in
-                          </a>
-                          <div className="text-sm text-[#555] mt-3">
-                            Don't have an account yet? <a className="underline" href="#register">Register</a>
+                        <div className="absolute right-0 mt-2 w-64 bg-neutral-00 rounded shadow-lg z-50">
+                          <div className="p-6">
+                            <a href="/accounts/login">
+                              <button className="w-full bg-neutral-100 text-neutral-00 py-3 rounded font-semibold text-sm hover:bg-neutral-90 transition mb-4">
+                                Log in
+                              </button>
+                            </a>
+                            <p className="text-neutral-80 text-sm mb-4">
+                              Don't have an account yet?{" "}
+                              <a href="/accounts/register" className="text-neutral-100 font-semibold hover:underline">
+                                Register
+                              </a>
+                            </p>
+                            <div className="border-t border-neutral-30 pt-4 space-y-3">
+                              <a href="#" className="block text-neutral-100 text-sm hover:text-neutral-80 transition">
+                                Check my order status
+                              </a>
+                              <a href="#" className="block text-neutral-100 text-sm hover:text-neutral-80 transition">
+                                Contact & Help
+                              </a>
+                            </div>
                           </div>
-                          <hr className="my-3" />
-                          <div className="flex flex-col gap-2 text-sm">
-                            <a href="/en/en/find-order/">Check my order status</a>
-                            <a href="https://help.kavehome.com">Contact & Help</a>
-                          </div>
-                        </motion.div>
+                        </div>
                       )}
                     </AnimatePresence>
                   </div>
@@ -266,20 +268,22 @@ export default function KaveHomeHeaderReplica() {
                       <FiShoppingBag size={20} />
                     </button>
                     <AnimatePresence>
+
                       {cartOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 6 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 6 }}
-                          className="absolute right-0 mt-3 w-[360px] bg-white shadow-xl border border-black/10 rounded-sm p-4"
-                        >
-                          <div className="text-center">
-                            <h3 className="text-xl font-semibold">Your shopping bag is empty.</h3>
-                            <p className="text-[#555] mt-1">It's shopping time!</p>
-                            <hr className="my-4" />
-                            <a href="#login" className="inline-flex items-center justify-center bg-black text-white px-6 py-2 rounded-sm font-semibold">Log in</a>
+                        <div className="absolute right-0 mt-2 w-80 bg-neutral-00 rounded shadow-lg z-50">
+                          <div className="p-6 text-center">
+                            <h3 className="text-neutral-100 font-semibold text-lg mb-2">Your shopping bag is empty.</h3>
+                            <p className="text-neutral-80 text-sm mb-6">It's shopping time!</p>
+                            <p className="text-neutral-80 text-xs mb-6">
+                              Are you looking for the products saved in your shopping bag or do you want to start doing it?
+                            </p>
+                            <a href="/accounts/login">
+                              <button className="w-full bg-neutral-100 text-neutral-00 py-3 rounded font-semibold text-sm hover:bg-neutral-90 transition">
+                                Log in
+                              </button>
+                            </a>
                           </div>
-                        </motion.div>
+                        </div>
                       )}
                     </AnimatePresence>
                   </div>
