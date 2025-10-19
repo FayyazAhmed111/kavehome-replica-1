@@ -8,7 +8,7 @@ const Carousel = () => {
       id: 1,
       title: "The Warm Edit",
       subtitle: "Textiles, fragrances and lighting to warm the winter season.",
-      bg: "bg-gradient-to-br from-amber-900 via-amber-800 to-amber-950",
+      bg: "bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500",
       media: "image",
       src: "/images/slide-1.avif",
       alt: "Warm furniture collection",
@@ -81,10 +81,10 @@ const Carousel = () => {
       {slides.map((slide) => (
         <section
           key={slide.id}
-          className={`min-h-screen w-full relative flex items-center ${slide.align === "left" ? " justify-start pl-6 md:pl-16" : "justify-center"}`}
+          className={`min-h-screen w-full   relative flex items-center ${slide.align === "left" ? " justify-start pl-6 md:pl-16" : "justify-center"}`}
         >
           {/* Gradient background */}
-          {/* <div className={`absolute inset-0 ${slide.bg}`} /> */}
+          <div className={`absolute inset-0  ${slide.bg}`} />
 
           {slide.media === "video" ? (
             <video
@@ -102,20 +102,20 @@ const Carousel = () => {
             <img
               src={slide.src}
               alt={slide.alt || slide.title}
-              className="absolute inset-0 w-full h-full object-cover opacity-60"
+                className="absolute inset-0 w-full h-full object-cover  "
               loading={slide.id === 1 ? "eager" : "lazy"}
             />
           )}
 
           <div className="absolute inset-0" />
 
-          <div className={`relative z-10 px-6 max-w-2xl ${slide.align === "left" ? "text-left" : "text-center"}`}>
+          <div className={`relative z-10 px-6 max-w-2xl text-white ${slide.align === "left" ? "text-left" : "text-center"}`}>
             <motion.h1
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.45 }}
               variants={rise}
-              className="text-6xl md:text-7xl font-light mb-4 font-kave-haffer tracking-wide"
+              className="text-6xl md:text-[80px] mb-4 font-kave-haffer tracking-tight "
             >
               {slide.title}
             </motion.h1>

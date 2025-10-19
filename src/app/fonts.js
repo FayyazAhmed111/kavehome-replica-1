@@ -35,11 +35,11 @@ export const kaveHaffer = localFont({
       weight: "400",
       style: "normal",
     },
-    // {
-    //   path: "../fonts/Haffer-TRIAL-Medium.woff2",
-    //   weight: "500",
-    //   style: "normal",
-    // },
+    {
+      path: "../fonts/Haffer-TRIAL-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
   ],
   variable: "--font-kave-haffer",
   display: "swap",
@@ -52,11 +52,11 @@ export const kaveHafferText = localFont({
       weight: "400",
       style: "normal",
     },
-    // {
-    //   path: "../fonts/Kave-HafferText-SemiBold.woff2",
-    //   weight: "600",
-    //   style: "normal",
-    // },
+    {
+      path: "../fonts/HafferXH-TRIAL-SemiBold.woff2",
+      weight: "500",
+      style: "normal",
+    },
   ],
   variable: "--font-kave-haffertext",
   display: "swap",
