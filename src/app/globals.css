@@ -9,6 +9,7 @@
   --font-noto-sans: var(--font-notosans);
   --font-kave-haffer: var(--font-kave-haffer);
   --font-kave-haffertext: var(--font-kave-haffertext)
+  --font-martina: var(--font-martina)
 
   /* Primary Colors */
   --color-primary: #000;
@@ -114,7 +115,7 @@
   }
 
   p {
-    @apply m-0 mb-4;
+    @apply m-0 mb-0;
   }
 
   h1 {

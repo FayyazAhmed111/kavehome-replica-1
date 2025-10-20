@@ -61,3 +61,15 @@ export const kaveHafferText = localFont({
   variable: "--font-kave-haffertext",
   display: "swap",
 });
+
+export const martinaRegular = localFont({
+  src: [
+    {
+      path: "../fonts/Marina-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-martina",
+  display: "swap",
+});

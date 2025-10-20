@@ -31,10 +31,10 @@ export default function AboutPage() {
           <h1
             className="
               text-white font-normal text-center
-              font-[Kave-Haffer]
+              font-kave-haffertext
               [line-height:82px] md:text-[82px]
               sm:text-[58px] sm:[line-height:62px]
-              text-[58px]
+              text-[58px] 
             "
           >
             About us
@@ -56,10 +56,10 @@ export default function AboutPage() {
         "
       >
         <div className="max-w-[800px]">
-          <h2 className="font-[Kave-Haffer] text-black font-normal md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px] mb-[12px]">
+          <h2 className="font-kave-haffertext text-black font-normal md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px] mb-[12px]">
             Our story
           </h2>
-          <p className="font-[Martina] text-[22px] [line-height:26px]">
+          <p className=" text-[22px] [line-height:26px]">
             Kave started long before it had a name or a brand.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
         "
       >
         <div className="max-w-[1004px]">
-          <p className="font-[Kave-Haffer] text-black md:text-[38px] text-[28px] md:[line-height:40px] [line-height:30px]">
+          <p className="font-kave-haffertext text-black md:text-[38px] text-[28px] md:[line-height:40px] [line-height:30px]">
             The project emerged from a way of understanding work, relationships
             and commitment. It all started in a small warehouse in Sils, where
             mattresses were distributed to hotels along the Costa Brava. There
@@ -161,7 +161,7 @@ export default function AboutPage() {
       ========================== */}
       <section className="bg-[#F2F1E7] pt-[80px] md:pt-[140px] pb-0 text-center">
         <div className="max-w-[835px] mx-auto">
-          <h2 className="font-[Kave-Haffer] font-normal md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px]">
+          <h2 className="font-kave-haffertext font-normal md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px]">
             Our point of view
           </h2>
         </div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
       ========================== */}
       <section className="bg-[#BDAFA0] pt-[60px] md:pt-[80px] pb-0 pl-[20px] md:pl-[65px]">
         <div className="max-w-full">
-          <p className="font-[Kave-Haffer] md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px] mb-[14px]">
+          <p className="font-kave-haffertext md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px] mb-[14px]">
             Our value proposition
           </p>
           <p className="font-[Martina] md:text-[26px] text-[22px] md:[line-height:30px] [line-height:26px]">
@@ -254,10 +254,10 @@ export default function AboutPage() {
           className="
             md:w-1/2 w-full
             px-[20px] md:px-0
-            pb-[55px] md:pb-[85px] pt-10 md:pt-10 
+            pb-[55px] md:pb-[85px] pt-10 md:pt-10 justify-center flex
           "
         >
-          <div className="max-w-[336px] md:mx-0 mr-auto">
+          <div className="max-w-[336px] md:mx-0  ">
             <p className="font-[Martina] text-[16px] font-semibold [line-height:18px]">
               A way of understanding the home.
             </p>
@@ -331,7 +331,7 @@ export default function AboutPage() {
       ========================== */}
       <section className="bg-[#F2F1E7] pt-[60px] md:pt-[140px] pb-[20px] text-center">
         <div className="max-w-full mx-auto">
-          <p className="font-[Kave-Haffer] md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px]">
+          <p className="font-kave-haffertext md:text-[60px] text-[48px] md:[line-height:82px] [line-height:50px]">
             Our commitment
           </p>
         </div>

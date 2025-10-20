@@ -17,7 +17,7 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { SliderInspiration } from "./SliderSection";
 
-const PRIMARY_LINKS = [
+const PRIMARY_LINKS = [ 
   { label: "New in", href: "/en/en/s/new" },
   { label: "Products", href: "#", isDrawerTab: "products" },
   { label: "Professionals", href: "/en/en/e/professionals" },
