@@ -8,11 +8,12 @@ const Carousel = () => {
       id: 1,
       title: "The Warm Edit",
       subtitle: "Textiles, fragrances and lighting to warm the winter season.",
-      bg: "bg-gradient-to-br from-blue-400 via-blue-300 to-blue-500",
+      bg: "shadow-gradient",
       media: "image",
       src: "/images/slide-1.avif",
       alt: "Warm furniture collection",
       align: "center",
+      shadow: true
     },
     {
       id: 2,
@@ -81,10 +82,10 @@ const Carousel = () => {
       {slides.map((slide) => (
         <section
           key={slide.id}
-          className={`min-h-screen w-full   relative flex items-center ${slide.align === "left" ? " justify-start pl-6 md:pl-16" : "justify-center"}`}
+          className={`min-h-screen w-full relative flex items-center ${slide.align === "left" ? " justify-start pl-6 md:pl-16" : "justify-center"}`}
         >
-          {/* Gradient background */}
-          <div className={`absolute inset-0  ${slide.bg}`} />
+          {/* Gradient x*/}
+          <div className={`absolute inset-0 z-20 w-full h-[20%] opacity-60 ${slide.shadow ? slide.bg : ""}`} />
 
           {slide.media === "video" ? (
             <video
@@ -99,12 +100,14 @@ const Carousel = () => {
               <source src={slide.src} type="video/webm" />
             </video>
           ) : (
-            <img
-              src={slide.src}
-              alt={slide.alt || slide.title}
-                className="absolute inset-0 w-full h-full object-cover  "
-              loading={slide.id === 1 ? "eager" : "lazy"}
-            />
+              <div className="">
+                <img
+                  src={slide.src}
+                  alt={slide.alt || slide.title}
+                  className="absolute inset-0 z-10 w-full h-full object-cover  "
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                />
+              </div>
           )}
 
           <div className="absolute inset-0" />

@@ -19,6 +19,9 @@
   --color-natural-sand: #bdafa0;
   --color-natural-terracotta: #a9431e;
 
+  --smokey-black: hsl(0, 0%, 6%);
+  --gradient: linear-gradient(0deg, transparent, var(--smokey-black));
+
   /* Neutral Scale */
   --color-neutral-00: #ffffff;
   --color-neutral-10: #f7f6f4;
@@ -70,7 +73,7 @@
 }
 
 @layer base {
-  html,
+    html,
   body {
     max-width: 100vw;
     overflow-x: hidden;
@@ -247,4 +250,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+.shadow-gradient {
+ background:  linear-gradient(0deg, transparent, var(--smokey-black));
 }
