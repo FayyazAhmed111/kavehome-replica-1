@@ -15,6 +15,7 @@ import { NAV_JSON } from "@/data/navData";
 import { TfiClose } from "react-icons/tfi";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { SliderInspiration } from "./SliderSection";
 
 const PRIMARY_LINKS = [
   { label: "New in", href: "/en/en/s/new" },
@@ -135,11 +136,11 @@ export default function KaveHomeHeaderReplica() {
       </AnimatePresence>
 
       {/* MAIN HEADER */}
-     <div
-        className={`fixed left-0 right-0 ${!atTop ? "bg-neutral-10" : "bg-transparent"} ${hidePromo ? "top-0" : "top-10"} transition-[top] duration-300`}
+      <div
+        className={`fixed left-0 right-0 ${!atTop ? "bg-neutral-10 text-black" : "bg-transparent text-white fill-white"} ${hidePromo ? "top-0" : "top-10"} transition-[top] duration-300`}
 
       >
-        <header className={`text-white border-b border-white/25`}>
+        <header className={` border-b border-white/25`}>
           <div className="mx-auto px-4 lg:px-10">
             <div className="h-18 flex items-center justify-between">
               {/* Left group: hamburger + logo */}
@@ -147,13 +148,13 @@ export default function KaveHomeHeaderReplica() {
                 <button
                   aria-label="Open menu"
                   onClick={() => openDrawerOnTab("highlights")}
-                  className="p-1 -ml-1 text-white cursor-pointer"
+                  className="p-1 -ml-1 cursor-pointer"
                 >
                   <FiMenu size={22} />
                 </button>
                 <a href="/en/en" aria-label="Kave Home" className="inline-flex items-center ">
                   {/* Inline SVG logo from the provided markup */}
-                  <svg viewBox="0 0 173 25" className="w-[150px] h-[22px] fill-white">
+                  <svg viewBox="0 0 173 25" className="w-[150px] h-[22px] ">
                     <path d="M0 -0.00012207H3.47478V11.6633L14.0372 -0.00012207H18.6473L10.8374 8.4159L19.6105 24.4444H15.3793L8.39483 11.0699L3.47478 16.4126V24.4444H0V-0.00012207Z"></path>
                     <path d="M33.8521 14.7715C33.8521 10.6506 31.2718 7.78742 27.6593 7.78742C24.0123 7.78742 21.432 10.6506 21.432 14.7715C21.432 18.8918 24.0123 21.7556 27.6593 21.7556C31.2718 21.7556 33.8521 18.8918 33.8521 14.7715ZM18.0263 14.7715C18.0263 8.73036 21.7764 4.8192 27.1779 4.8192C29.9987 4.8192 32.6484 6.21574 33.8521 8.13629V5.09801H37.2582V24.4443H33.8521V21.4414C32.6484 23.3273 29.9987 24.7238 27.2124 24.7238C21.7764 24.7238 18.0263 20.7777 18.0263 14.7715Z"></path>
                     <path d="M38.2885 5.09824H41.9355L47.543 20.0097L53.0825 5.09824H56.6259L49.1605 24.4445H45.7543L38.2885 5.09824Z"></path>
@@ -166,18 +167,18 @@ export default function KaveHomeHeaderReplica() {
                 </a>
                 {/*search (desktop) */}
                 <div className="hidden md:flex flex-1 ml-auto md:ml-0">
-                  <label className="flex items-center w-[300px] 
-                   gap-2 border border-white/40 px-3 py-2 shadow-[inset_0_1px_0_rgba(0,0,0,.02)]">
+                  <label className={`flex items-center w-[300px] 
+                   gap-2 ${!atTop ? "bg-neutral-20" : "border border-white/40 "} px-3 py-2 shadow-[inset_0_1px_0_rgba(0,0,0,.02)]`}>
                     <FiSearch className="opacity-70 text-[20px]" />
                     <input
                       className="w-full font-poppins font-[500] text-white text-[16px] placeholder:text-[#777] outline-none"
                       placeholder="What are you looking for?"
                     />
-                </label>
-              </div>
+                  </label>
+                </div>
               </div>
 
-              
+
 
               {/* Right: links + icons */}
               <div className="flex  items-center gap-5">
@@ -301,7 +302,7 @@ export default function KaveHomeHeaderReplica() {
               className="fixed left-0 top-0 bottom-0 h-screen bg-white shadow-2xl flex"
             >
               {/* LEFT PANEL */}
-               <div className="md:w-[440px] w-[360px] border-r border-black/10 px-11 py-8 gap-8 flex flex-col">
+              <div className="md:w-[440px] w-[360px] border-r border-black/10 px-11 py-8 gap-8 flex flex-col">
                 <button
                   onClick={() => setDrawerOpen(false)}
                   className=""
@@ -329,14 +330,14 @@ export default function KaveHomeHeaderReplica() {
                     <button
                       key={tab.key}
                       onClick={() => setActiveTab(tab.key)}
-                      className={`text-left text-[22px] ${activeTab === tab.key ? "text-black" : "text-black/60"
+                      className={`text-left text-[22px] font-kave-haffertext ${activeTab === tab.key ? "text-black" : "text-black/60"
                         }`}
                     >
                       {tab.label}
                     </button>
                   ))}
                 </div>
-                 {/* Footer simple links */}
+                {/* Footer simple links */}
                 <div className="mt-auto mb-8 flex flex-col gap-[3px] font-kave-haffertext font-[450] text-[14px]">
                   <a href="/en/en/stores/">Our stores</a>
                   <a href="/en/en/about-us/">About us</a>
@@ -349,7 +350,7 @@ export default function KaveHomeHeaderReplica() {
 
               {/* MIDDLE PANEL START */}
               <div
-                className={`relative overflow-hidden ${activeTab === "inspiration" ? "w-[60vw]" : "md:w-[440px] w-[360px]"
+                className={`relative overflow-hidden ${activeTab === "inspiration" ? "md:w-[40vw] w-[540px]" : "md:w-[440px] w-[360px]"
                   }`}
               >
                 <div className="absolute inset-0">
@@ -363,16 +364,16 @@ export default function KaveHomeHeaderReplica() {
                         exit="exit"
                         className="px-12 mt-20"
                       >
-                        <h3 className="text-[32px] mb-6">Products</h3>
+                        <h3 className="text-[32px] mb-6 font-kave-haffertext tracking-tight">Products</h3>
                         <ul className="text-[16px] mt-6">
                           {productColumns.map((col, idx) => (
-                            <li key={col.title} className="flex items-center cursor-pointer">
+                            <li key={col.title} className="flex group items-center cursor-pointer">
                               <button
                                 onClick={() => setActiveColumnIndex(idx)}
-                                className="w-full flex items-center justify-between py-1.5"
+                                className="w-full flex items-center font-kave-haffertext justify-between py-1.5"
                               >
                                 {col.title}
-                                <FiChevronRight />
+                                <FiChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                               </button>
                             </li>
                           ))}
@@ -389,14 +390,22 @@ export default function KaveHomeHeaderReplica() {
                         exit="exit"
                         className="px-12 mt-20"
                       >
-                        <h3 className="text-[32px] mb-6">Highlights</h3>
-                        <ul className="space-y-4 text-[15px]">
+                        <h3 className="text-[32px] mb-6 font-kave-haffertext">Highlights</h3>
+
+                        <ul className="flex flex-col gap-4 text-[15px]">
                           {NAV_JSON.highlights.map((i) => (
-                            <li key={i.label}>
-                              <a href={i.href}>{i.label}</a>
+                            <li key={i.label} className={`${i.space ? "mb-4" : ""}`}
+                            >
+                              <a
+                                className={`font-kave-haffertext text-[16px] `}
+                                href={i.href}
+                              >
+                                {i.label}
+                              </a>
                             </li>
                           ))}
                         </ul>
+
                       </motion.div>
                     )}
 
@@ -425,30 +434,31 @@ export default function KaveHomeHeaderReplica() {
                         key="i"
                         variants={levelVariants}
                         initial="initial"
+
                         animate="enter"
                         exit="exit"
-                        className="p-8 overflow-y-auto h-full"
+                        className="px-12 mt-20 overflow-y-auto h-full "
                       >
-                        <h3 className="text-3xl font-semibold mb-6">Inspiration</h3>
+                        <h3 className="text-3xl font-kave-haffertext mb-6">Inspiration</h3>
 
                         {/* Trending now – 3 static tiles */}
-                        <StaticSection
+                        <SliderInspiration
                           title="Trending now"
-                          items={(NAV_JSON?.inspiration?.trending || []).slice(0, 3)}
+                          items={(NAV_JSON?.inspiration?.trending || []).slice(0, 4)}
                         />
 
-                        <div className="h-8" />
+                        {/* <div className="h-8" /> */}
 
                         {/* Our favourites – manual slider */}
-                        <SliderSection
+                        <SliderInspiration
                           title="Our favourites"
                           items={NAV_JSON?.inspiration?.favourites || []}
+
                         />
 
-                        <div className="h-8" />
 
                         {/* Kave Gallery – manual slider + Discover */}
-                        <SliderSection
+                        <SliderInspiration
                           title="Kave Gallery"
                           items={NAV_JSON?.inspiration?.gallery || []}
                           rightLink={{ label: "Discover", href: "/en/en/kave-gallery" }}
@@ -472,17 +482,17 @@ export default function KaveHomeHeaderReplica() {
                       className="px-12 h-full mt-20 overflow-y-auto"
                     >
                       <div className="flex items-center justify-between">
-                        <h4 className="text-3xl font-normal tracking-tight">
+                        <h4 className="text-3xl font-normal tracking-tight font-kave-haffertext ">
                           {activeColumn.title}
                         </h4>
-                        <a href={activeColumn.seeAll} className="underline text-[16px]">
+                        <a href={activeColumn.seeAll} className="underline text-[16px] font-kave-haffertext ">
                           See all
                         </a>
                       </div>
                       <ul className="mt-8 space-y-2.5 text-[16px]">
                         {activeColumn.items.map((i) => (
                           <li key={i.label}>
-                            <a href={i.href} className="hover:text-black/60">
+                            <a href={i.href} className="hover:text-black/60 font-kave-haffertext ">
                               {i.label}
                             </a>
                           </li>
@@ -543,7 +553,7 @@ function SliderSection({ title, items, rightLink }) {
   return (
     <div className="relative">
       <div className="flex items-center justify-between mb-4">
-        <h4 className="text-2xl font-semibold">{title}</h4>
+        <h4 className="text-[16px] font-kave-haffertext font-semibold">{title}</h4>
         {rightLink && (
           <a href={rightLink.href} className="underline text-[15px]">
             {rightLink.label}
@@ -559,22 +569,22 @@ function SliderSection({ title, items, rightLink }) {
         </button>
         <div
           ref={containerRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide"
+          className="flex gap-4 overflow-hidden scroll-smooth scrollbar-hide"
         >
           {items.map((i) => (
             <a
               key={i.label}
               href={i.href}
-              className="flex flex-col gap-2 min-w-[180px]"
+              className="flex flex-col  min-w-[100px]"
             >
-              <div className="aspect-[5/4] bg-[#eee] overflow-hidden rounded-md">
+              <div className="aspect-square bg-[#eee] overflow-hidden ">
                 <img
                   src={i.image || "/placeholder.jpg"}
                   alt={i.label}
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="text-[13px]">{i.label}</div>
+              <div className="text-[12px] font-kave-haffertext mt-2">{i.label}</div>
             </a>
           ))}
         </div>
