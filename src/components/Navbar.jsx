@@ -1,5 +1,5 @@
-"use client"
-import React, { useEffect, useMemo, useRef, useState } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FiMenu,
@@ -13,12 +13,9 @@ import {
 } from "react-icons/fi";
 import { NAV_JSON } from "@/data/navData";
 import { TfiClose } from "react-icons/tfi";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
-``
-// 1) Hardcoded primary links (left-to-right) – editable variable as requested
 const PRIMARY_LINKS = [
   { label: "New in", href: "/en/en/s/new" },
   { label: "Products", href: "#", isDrawerTab: "products" },
@@ -27,7 +24,6 @@ const PRIMARY_LINKS = [
   { label: "Stores", href: "/en/en/stores/" },
 ];
 
-// Utility: useOnClickOutside
 function useOnClickOutside(ref, handler) {
   useEffect(() => {
     const listener = (e) => {
@@ -43,39 +39,33 @@ function useOnClickOutside(ref, handler) {
   }, [ref, handler]);
 }
 
-// Promo slider items
 const PROMO_SLIDES = [
   { textLeft: "Here to Stay |", textRight: "Discover", href: "/s/selected-collection" },
   { textLeft: "Selected Collection |", textRight: "Discover", href: "/s/selected-collection" },
 ];
 
 export default function KaveHomeHeaderReplica() {
-  // Promo bar visibility based on scroll
   const [hidePromo, setHidePromo] = useState(false);
   const [atTop, setAtTop] = useState(true);
   useEffect(() => {
-    let last = 0;
     const onScroll = () => {
       const y = window.scrollY;
       setAtTop(y < 2);
-      setHidePromo(y > 12); // hide once scrolled a bit
-      last = y;
+      setHidePromo(y > 12);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Promo auto-slide index
   const [promoIdx, setPromoIdx] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setPromoIdx((i) => (i + 1) % PROMO_SLIDES.length), 3500);
     return () => clearInterval(id);
   }, []);
 
-  // Drawer state: which main tab? which column? (for 3-level)
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("highlights");
-  const [activeColumnIndex, setActiveColumnIndex] = useState(null); // 2nd level selection
+  const [activeColumnIndex, setActiveColumnIndex] = useState(null);
 
   const openDrawerOnTab = (tab) => {
     setActiveTab(tab);
@@ -83,7 +73,6 @@ export default function KaveHomeHeaderReplica() {
     setDrawerOpen(true);
   };
 
-  // Account & Cart popovers
   const [accountOpen, setAccountOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const accountRef = useRef(null);
@@ -91,12 +80,10 @@ export default function KaveHomeHeaderReplica() {
   useOnClickOutside(accountRef, () => setAccountOpen(false));
   useOnClickOutside(cartRef, () => setCartOpen(false));
 
-  // Derived data for products columns
   const productColumns = NAV_JSON.products.columns;
   const activeColumn =
     activeColumnIndex != null ? productColumns[activeColumnIndex] : null;
 
-  // Motion variants
   const slideIn = {
     hidden: { x: "-100%", opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { type: "tween", duration: 0.36 } },
@@ -117,7 +104,7 @@ export default function KaveHomeHeaderReplica() {
 
   return (
     <div className="relative z-[60]">
-      {/* TOP PROMO STRIP (beige), slides text, disappears on scroll) */}
+      {/* TOP PROMO STRIP */}
       <AnimatePresence initial={false}>
         {!hidePromo && (
           <motion.div
@@ -147,9 +134,10 @@ export default function KaveHomeHeaderReplica() {
         )}
       </AnimatePresence>
 
-      {/* MAIN HEADER (sticky) */}
-      <div
-        className={`fixed left-0 right-0 ${hidePromo ? "top-0" : "top-10"} transition-[top] duration-300`}
+      {/* MAIN HEADER */}
+     <div
+        className={`fixed left-0 right-0 ${!atTop ? "bg-neutral-10" : "bg-transparent"} ${hidePromo ? "top-0" : "top-10"} transition-[top] duration-300`}
+
       >
         <header className={`text-white border-b border-white/25`}>
           <div className="mx-auto px-4 lg:px-10">
@@ -294,11 +282,10 @@ export default function KaveHomeHeaderReplica() {
         </header>
       </div>
 
-      {/* OVERLAY + DRAWER */}
+      {/* DRAWER START */}
       <AnimatePresence>
         {drawerOpen && (
           <>
-            {/* Dim overlay */}
             <motion.div
               onClick={() => setDrawerOpen(false)}
               initial={{ opacity: 0 }}
@@ -306,17 +293,15 @@ export default function KaveHomeHeaderReplica() {
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/70"
             />
-
-            {/* Drawer shell */}
             <motion.aside
               variants={slideIn}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed left-0 top-0 bottom-0 h-screen  bg-white shadow-2xl flex"
+              className="fixed left-0 top-0 bottom-0 h-screen bg-white shadow-2xl flex"
             >
-              {/* Column 1 – left rail */}
-              <div className="md:w-[440px] w-[360px] border-r border-black/10 px-11 py-8 gap-8 flex flex-col">
+              {/* LEFT PANEL */}
+               <div className="md:w-[440px] w-[360px] border-r border-black/10 px-11 py-8 gap-8 flex flex-col">
                 <button
                   onClick={() => setDrawerOpen(false)}
                   className=""
@@ -338,23 +323,20 @@ export default function KaveHomeHeaderReplica() {
                     { key: "highlights", label: "Highlights" },
                     { key: "products", label: "Products" },
                     { key: "inspiration", label: "Inspiration" },
-                    { key: "gallery", label: "Kave Gallery", route: "/en/en/e/kave-gallery" },
-                    { key: "professionals", label: "Professionals", route: "/en/en/e/professionals" },
+                    { key: "gallery", label: "Kave Gallery" },
+                    { key: "professionals", label: "Professionals" },
                   ].map((tab) => (
                     <button
                       key={tab.key}
-                      onClick={() =>
-                        tab.route ? (window.location.href = tab.route) : setActiveTab(tab.key)
-                      }
-                      className={`text-left font-kave-haffertext text-[22px] ${activeTab === tab.key ? " text-black" : "text-black/60"
-                      }`}
+                      onClick={() => setActiveTab(tab.key)}
+                      className={`text-left text-[22px] ${activeTab === tab.key ? "text-black" : "text-black/60"
+                        }`}
                     >
                       {tab.label}
                     </button>
                   ))}
                 </div>
-
-                {/* Footer simple links */}
+                 {/* Footer simple links */}
                 <div className="mt-auto mb-8 flex flex-col gap-[3px] font-kave-haffertext font-[450] text-[14px]">
                   <a href="/en/en/stores/">Our stores</a>
                   <a href="/en/en/about-us/">About us</a>
@@ -365,103 +347,151 @@ export default function KaveHomeHeaderReplica() {
                 </div>
               </div>
 
-              {/* Column 2 – middle: varies by activeTab */}
-              <div className="md:w-[440px] w-[360px] relative overflow-hidden">
+              {/* MIDDLE PANEL START */}
+              <div
+                className={`relative overflow-hidden ${activeTab === "inspiration" ? "w-[60vw]" : "md:w-[440px] w-[360px]"
+                  }`}
+              >
                 <div className="absolute inset-0">
                   <AnimatePresence mode="wait">
-                    {activeTab === "highlights" && (
-                      <motion.div key="h" variants={levelVariants} initial="initial" animate="enter" exit="exit" className="px-12 mt-6 md:mt-20">
-                        <h3 className="text-[32px] font-kave-haffertext mb-6 tracking-tight">Highlights</h3>
-                        <ul className="space-y-4 text-[15px]">
-                          {NAV_JSON.highlights.map((i) => (
-                            <li key={i.label}>
-                              <a href={i.href} className="hover:underline font-light text-[16px] font-kave-haffertext">
-                                {i.label}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    )}
-
                     {activeTab === "products" && (
-                      <motion.div key="p" variants={levelVariants} initial="initial" animate="enter" exit="exit" className="px-12 w-full mt-6  md:mt-20">
-                        <div className="mt-8">
-                          <h3 className="text-[32px] font-normal font-kave-haffertext tracking-tight">Products</h3>
-                        </div>
-
-                        <ul className="text-[16px] mt-6 font-kave-haffertext">
+                      <motion.div
+                        key="products"
+                        variants={levelVariants}
+                        initial="initial"
+                        animate="enter"
+                        exit="exit"
+                        className="px-12 mt-20"
+                      >
+                        <h3 className="text-[32px] mb-6">Products</h3>
+                        <ul className="text-[16px] mt-6">
                           {productColumns.map((col, idx) => (
-                            <li key={col.title} className="group   flex items-center  cursor-pointer">
+                            <li key={col.title} className="flex items-center cursor-pointer">
                               <button
                                 onClick={() => setActiveColumnIndex(idx)}
-                                className={`w-full text-left py-1.5 text-black flex  items-center justify-between  ${activeColumnIndex === idx ? " text-black" : "text-black/70"
-                                }`}
+                                className="w-full flex items-center justify-between py-1.5"
                               >
                                 {col.title}
-                                <FiChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                                <FiChevronRight />
                               </button>
                             </li>
                           ))}
-
                         </ul>
                       </motion.div>
                     )}
 
+                    {activeTab === "highlights" && (
+                      <motion.div
+                        key="highlights"
+                        variants={levelVariants}
+                        initial="initial"
+                        animate="enter"
+                        exit="exit"
+                        className="px-12 mt-20"
+                      >
+                        <h3 className="text-[32px] mb-6">Highlights</h3>
+                        <ul className="space-y-4 text-[15px]">
+                          {NAV_JSON.highlights.map((i) => (
+                            <li key={i.label}>
+                              <a href={i.href}>{i.label}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+
+                    {activeTab === "gallery" && (
+                      <motion.div
+                        key="gallery"
+                        variants={levelVariants}
+                        initial="initial"
+                        animate="enter"
+                        exit="exit"
+                        className="px-12 mt-20"
+                      >
+                        <h3 className="text-[32px] mb-6">Kave Gallery</h3>
+                        <ul className="space-y-4 text-[15px]">
+                          {(NAV_JSON?.inspiration?.gallery || []).slice(0, 12).map((i) => (
+                            <li key={i.label}>
+                              <a href={i.href}>{i.label}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                    {/* INSPIRATION – wide (≈60vw), with static row + 2 sliders with buttons */}
                     {activeTab === "inspiration" && (
-                      <motion.div key="i" variants={levelVariants} initial="initial" animate="enter" exit="exit" className="p-8 overflow-y-auto h-full">
+                      <motion.div
+                        key="i"
+                        variants={levelVariants}
+                        initial="initial"
+                        animate="enter"
+                        exit="exit"
+                        className="p-8 overflow-y-auto h-full"
+                      >
                         <h3 className="text-3xl font-semibold mb-6">Inspiration</h3>
-                        <SectionGrid title="Trending now" items={NAV_JSON.inspiration.trending} />
+
+                        {/* Trending now – 3 static tiles */}
+                        <StaticSection
+                          title="Trending now"
+                          items={(NAV_JSON?.inspiration?.trending || []).slice(0, 3)}
+                        />
+
                         <div className="h-8" />
-                        <SectionGrid title="Our favourites" items={NAV_JSON.inspiration.favourites} />
+
+                        {/* Our favourites – manual slider */}
+                        <SliderSection
+                          title="Our favourites"
+                          items={NAV_JSON?.inspiration?.favourites || []}
+                        />
+
                         <div className="h-8" />
-                        <SectionGrid title="Kave Gallery" items={NAV_JSON.inspiration.gallery.slice(0, 8)} rightLink={{ label: "Discover", href: "/en/en/kave-gallery" }} />
+
+                        {/* Kave Gallery – manual slider + Discover */}
+                        <SliderSection
+                          title="Kave Gallery"
+                          items={NAV_JSON?.inspiration?.gallery || []}
+                          rightLink={{ label: "Discover", href: "/en/en/kave-gallery" }}
+                        />
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               </div>
 
-              {/* Column 3 – right: third level for products */}
-              <div className="md:w-[440px] w-[360px] border-l  border-black/10  relative">
-                <AnimatePresence mode="wait">
-                  {activeTab === "products" && activeColumn && (
+              {/* RIGHT COLUMN – only for product subcategories */}
+              {activeTab === "products" && activeColumn && (
+                <div className="md:w-[440px] w-[360px] border-l border-black/10 relative">
+                  <AnimatePresence mode="wait">
                     <motion.div
                       key={activeColumn.title}
                       variants={thirdLevelVariants}
                       initial="initial"
                       animate="enter"
                       exit="exit"
-                      className="px-12 h-full mt-6  md:mt-20 overflow-y-auto"
+                      className="px-12 h-full mt-20 overflow-y-auto"
                     >
-                      {/* <div className="flex items-center justify-between">
-                        <button
-                          onClick={() => setActiveColumnIndex(null)}
-                          className="text-sm inline-flex items-center gap-1 text-black/70 hover:text-black"
-                        >
-                          <FiChevronLeft /> Go Back
-                        </button>
-                        <button onClick={() => setActiveColumnIndex(null)} aria-label="Close panel" className="p-1">
-                          <FiX />
-                        </button>
-                      </div> */}
-                      <div className=" flex items-center justify-between">
-                        <h4 className="text-3xl font-normal font-kave-haffertext tracking-tight ">{activeColumn.title}</h4>
-                        <a href={activeColumn.seeAll} className="underline text-[16px] font-kave-haffertext">See all</a>
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-3xl font-normal tracking-tight">
+                          {activeColumn.title}
+                        </h4>
+                        <a href={activeColumn.seeAll} className="underline text-[16px]">
+                          See all
+                        </a>
                       </div>
-                      <ul className="mt-8 space-y-2.5 font-normal font-kave-haffertext  text-[16px]">
+                      <ul className="mt-8 space-y-2.5 text-[16px]">
                         {activeColumn.items.map((i) => (
                           <li key={i.label}>
-                            <a href={i.href} className="transition-colors px-1 py-1 rounded-sm inline- hover:text-black/60">
+                            <a href={i.href} className="hover:text-black/60">
                               {i.label}
                             </a>
                           </li>
                         ))}
                       </ul>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  </AnimatePresence>
+                </div>
+              )}
             </motion.aside>
           </>
         )}
@@ -470,9 +500,48 @@ export default function KaveHomeHeaderReplica() {
   );
 }
 
-function SectionGrid({ title, items, rightLink }) {
+/* ===================== SUB COMPONENTS ===================== */
+
+// Static section (3 fixed cards)
+function StaticSection({ title, items }) {
   return (
     <div>
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="text-2xl font-semibold">{title}</h4>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {items.map((i) => (
+          <a key={i.label} href={i.href} className="flex flex-col gap-2">
+            <div className="aspect-[5/4] bg-[#eee] overflow-hidden rounded-md">
+              <img
+                src={i.image || "/placeholder.jpg"}
+                alt={i.label}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="text-[13px]">{i.label}</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// Manual slider with left/right buttons
+function SliderSection({ title, items, rightLink }) {
+  const containerRef = useRef(null);
+
+  const scroll = (dir) => {
+    if (!containerRef.current) return;
+    const amount = containerRef.current.clientWidth * 0.8;
+    containerRef.current.scrollBy({
+      left: dir === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className="relative">
       <div className="flex items-center justify-between mb-4">
         <h4 className="text-2xl font-semibold">{title}</h4>
         {rightLink && (
@@ -481,13 +550,40 @@ function SectionGrid({ title, items, rightLink }) {
           </a>
         )}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {items.map((i) => (
-          <a key={i.label} href={i.href} className="flex flex-col gap-2">
-            <div className="aspect-[5/4] bg-[#eee]" />
-            <div className="text-[13px] leading-tight">{i.label}</div>
-          </a>
-        ))}
+      <div className="relative">
+        <button
+          className="absolute -left-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          onClick={() => scroll("left")}
+        >
+          <FiChevronLeft />
+        </button>
+        <div
+          ref={containerRef}
+          className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide"
+        >
+          {items.map((i) => (
+            <a
+              key={i.label}
+              href={i.href}
+              className="flex flex-col gap-2 min-w-[180px]"
+            >
+              <div className="aspect-[5/4] bg-[#eee] overflow-hidden rounded-md">
+                <img
+                  src={i.image || "/placeholder.jpg"}
+                  alt={i.label}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="text-[13px]">{i.label}</div>
+            </a>
+          ))}
+        </div>
+        <button
+          className="absolute -right-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
+          onClick={() => scroll("right")}
+        >
+          <FiChevronRight />
+        </button>
       </div>
     </div>
   );
