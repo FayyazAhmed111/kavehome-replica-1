@@ -1,9 +1,39 @@
 "use client";
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+        credentials: "include",
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Login failed");
+
+
+      // redirect directly to user dashboard
+      router.push("/accounts/dashboard");
+    } catch (err) {
+      alert(`❌ Login failed: ${err.message}`);
+    }
+  };
+
+
 
   return (
     <main
@@ -40,7 +70,7 @@ export default function LoginPage() {
         </p>
 
         {/* FORM */}
-        <form className="flex flex-col text-left space-y-5">
+        <form onSubmit={handleLogin} className="flex flex-col text-left space-y-5">
           {/* Email */}
           <div className="mb-4">
             <div>
