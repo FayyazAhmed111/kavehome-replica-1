@@ -8,8 +8,8 @@
   --font-poppins: var(--font-poppins);
   --font-noto-sans: var(--font-notosans);
   --font-kave-haffer: var(--font-kave-haffer);
-  --font-kave-haffertext: var(--font-kave-haffertext)
-  --font-martina: var(--font-martina)
+  --font-kave-haffertext: var(--font-kave-haffertext);
+  --font-martina: var(--font-martina), sans-serif;
 
   /* Primary Colors */
   --color-primary: #000;

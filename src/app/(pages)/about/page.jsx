@@ -8,7 +8,7 @@ export default function AboutPage() {
           HERO (EXACT 100vh)
       ========================== */}
 
-      <div className="relative flex flex-col items-center justify-center  overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center overflow-hidden">
         <div className=" absolute z-[1]  flex items-center flex-col w-full max-w-full">
           <h1
             className="
@@ -171,7 +171,7 @@ export default function AboutPage() {
       {/* subtitle + paragraph (center) – exact widths & spacings */}
       <section className="bg-[#F2F1E7] pt-[12px] md:pt-[12px] pb-[60px] md:pb-[108px] text-center">
         <div className="max-w-[450px] mx-auto">
-          <p className="font-[Martina] text-[22px] [line-height:26px] mb-[32px]">
+          <p className="font-martina text-[22px] [line-height:26px] mb-[32px]">
             Through objects, we build bonds between people and spaces.
           </p>
           <p className="font-[Martina] text-[14px] [line-height:16px]">

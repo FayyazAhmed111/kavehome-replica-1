@@ -1,28 +1,39 @@
 "use client";
 import React from "react";
 import LangSelector from "./LanguageSelector";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
 
+  const pathname = usePathname();
+  const isAuthPage = pathname.includes("/accounts/login") || pathname.includes("/accounts/register");
   return (
+
+
+
     <footer
       id="footer"
-      className="site-footer bg-[var(--color-neutral-00)] text-[var(--color-neutral-100)] border-t border-[var(--color-neutral-30)] mt-[24px] font-notosans"
+      className="site-footer  text-[var(--color-neutral-100)]"
     >
       {/* Banner */}
-      <div
-        className="
+      {
+        isAuthPage ? (
+          <div></div>
+
+        ) : (
+            <div
+              className="
+         border-t mt-[24px] font-notosans
           bg-[var(--color-neutral-20)] 
-          border-b border-[var(--color-neutral-30)]
           flex flex-col items-center justify-center
           text-[var(--color-primary)]
           md:px-20 md:py-10 
           lg:flex-row lg:items-end lg:justify-center lg:py-14 
         "
-      >
-        {/* Text */}
-        <div
-          className="
+            >
+              {/* Text */}
+              <div
+                className="
             flex flex-col flex-wrap content-end 
             border-b border-[var(--color-neutral-40)] 
             m-[0_24px] 
@@ -35,21 +46,21 @@ const Footer = () => {
             lg:max-w-[720px]
             flex-[1_1_50%]
           "
-        >
-          <p className="font-kave-haffertext text-[22px]  leading-[22px] mb-2 tracking-tight max-w-[480px]">
-            Our commitment to responsible practices.
-          </p>
-          <a
-            href="/en/en/kave-cares/"
-            className="underline text-[14px] mt-[8px] inline-block hover:opacity-80 font-poppins"
-          >
-            Discover the project
-          </a>
-        </div>
+              >
+                <p className="font-kave-haffertext text-[22px]  leading-[22px] mb-2 tracking-tight max-w-[480px]">
+                  Our commitment to responsible practices.
+                </p>
+                <a
+                  href="/en/en/kave-cares/"
+                  className="underline text-[14px] mt-[8px] inline-block hover:opacity-80 font-poppins"
+                >
+                  Discover the project
+                </a>
+              </div>
 
-        {/* Logos */}
-        <div
-          className="
+              {/* Logos */}
+              <div
+                className="
             flex items-center gap-12 overflow-x-scroll scrollbar-hide
             px-6 py-8 pb-10 md:px-0 md:py-0 md:pb-0
             lg:overflow-x-visible lg:justify-end lg:px-[60px] lg:pr-[90px]
@@ -58,28 +69,30 @@ const Footer = () => {
             lg:max-w-[720px]
             flex-[1_1_50%]
           "
-        >
-          <div className="shrink-0">
-            <img src="/images/climate-partner.svg" alt="Climate Partner" className="h-[65px] w-auto" />
-          </div>
-          <div className="shrink-0">
-            <img src="/images/sustainable_development_goals_1.avif" alt="Sustainable Dev Logo" className="h-[50px] w-auto" />
-          </div>
-          <div className="shrink-0">
-            <img src="/images/ghg.avif" alt="DNV Logo" className="h-[56px] w-auto" />
-          </div>
-          <div className="shrink-0 pr-[24px] md:pr-0">
-            <img src="/images/fsv.png" alt="FSC Logo" className="h-[65px] w-auto" />
-          </div>
-        </div>
-      </div>
+              >
+                <div className="shrink-0">
+                  <img src="/images/climate-partner.svg" alt="Climate Partner" className="h-[65px] w-auto" />
+                </div>
+                <div className="shrink-0">
+                  <img src="/images/sustainable_development_goals_1.avif" alt="Sustainable Dev Logo" className="h-[50px] w-auto" />
+                </div>
+                <div className="shrink-0">
+                  <img src="/images/ghg.avif" alt="DNV Logo" className="h-[56px] w-auto" />
+                </div>
+                <div className="shrink-0 pr-[24px] md:pr-0">
+                  <img src="/images/fsv.png" alt="FSC Logo" className="h-[65px] w-auto" />
+                </div>
+              </div>
+            </div>
+        )}
+
 
       {/* Footer Nav */}
       <nav
         className="footer-nav grid grid-cols-1 px-[32px] pt-[56px] pb-[24px] gap-y-0
                     md:grid-cols-2 md:gap-y-0 md:px-[80px] md:py-[56px]
                     lg:grid-cols-5
-                    xl:px-[96px] xl:py-[64px]"
+                    xl:px-[96px] xl:py-[64px]   border-t border-neutral-30"
       >
 
         {/* Links Container */}

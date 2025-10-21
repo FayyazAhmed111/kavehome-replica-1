@@ -65,7 +65,7 @@ export const kaveHafferText = localFont({
 export const martinaRegular = localFont({
   src: [
     {
-      path: "../fonts/Marina-Regular.woff2",
+      path: "../fonts/MartinBecker-Regular.woff2",
       weight: "400",
       style: "normal",
     },
