@@ -14,18 +14,20 @@ export async function GET() {
     }
 
     const baseUrl = process.env.NEXT_PUBLIC_WP_BASE_URL;
-
     const authHeader = `Basic ${btoa(`${email}:${token}`)}`;
 
+    // 🚀 Force fresh response — no stale cache
     const res = await fetch(`${baseUrl}/wp-json/wp/v2/users/me`, {
       headers: {
         Authorization: authHeader,
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
+      cache: "no-store",
     });
 
     if (!res.ok) {
       const errText = await res.text();
-      console.error("WordPress /users/me error:", errText);
+      console.error("❌ WordPress /users/me error:", errText);
       return Response.json(
         { loggedIn: false, user: null, reason: "invalid_auth" },
         { status: 401 }
@@ -33,9 +35,9 @@ export async function GET() {
     }
 
     const user = await res.json();
-    return Response.json({ loggedIn: true, user });
+    return Response.json({ loggedIn: true, user, fetchedAt: new Date().toISOString() });
   } catch (error) {
-    console.error("/api/me route error:", error);
+    console.error("❌ /api/me route error:", error);
     return Response.json(
       { loggedIn: false, user: null, error: error.message },
       { status: 500 }

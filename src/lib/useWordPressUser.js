@@ -10,9 +10,13 @@ export function useWordPressUser({ redirectToLogin = false } = {}) {
   const fetchUser = async (forceRefresh = false) => {
     try {
       const cached = localStorage.getItem("wp_user");
-      if (cached && !forceRefresh) setUser(JSON.parse(cached));
 
-      const res = await fetch("/api/me", { credentials: "include" });
+      // 🔄 Always force refresh from WordPress
+      const res = await fetch(`/api/me?fresh=${Date.now()}`, {
+        credentials: "include",
+        cache: "no-store", // Ensures no browser or Next.js caching
+      });
+
       const data = await res.json();
 
       if (!data.loggedIn) {
@@ -22,10 +26,17 @@ export function useWordPressUser({ redirectToLogin = false } = {}) {
         return;
       }
 
-      if (!cached || JSON.parse(cached).name !== data.user.name) {
-        setUser(data.user);
+      // 🧠 Update cache only if data changed or forced
+      if (
+        forceRefresh ||
+        !cached ||
+        JSON.parse(cached).name !== data.user.name ||
+        JSON.parse(cached).avatar_urls["96"] !== data.user.avatar_urls["96"]
+      ) {
         localStorage.setItem("wp_user", JSON.stringify(data.user));
       }
+
+      setUser(data.user);
     } catch (err) {
       console.error("Failed to fetch user:", err);
     } finally {
@@ -34,8 +45,8 @@ export function useWordPressUser({ redirectToLogin = false } = {}) {
   };
 
   useEffect(() => {
-    fetchUser(true); // always refresh on mount
-    const interval = setInterval(() => fetchUser(true), 60000 * 5); // refresh every 5 mins
+    fetchUser(true); // ✅ Always fresh on mount
+    const interval = setInterval(() => fetchUser(true), 1000 * 60 * 5); // Refresh every 5 min
     return () => clearInterval(interval);
   }, []);
 
@@ -50,5 +61,5 @@ export function useWordPressUser({ redirectToLogin = false } = {}) {
     }
   };
 
-  return { user, loading, logout };
+  return { user, loading, logout, refetchUser: fetchUser };
 }
