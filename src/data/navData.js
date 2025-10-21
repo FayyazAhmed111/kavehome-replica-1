@@ -16,10 +16,10 @@ export const NAV_JSON = {
         title: "Sofas",
         seeAll: "/en/en/o/sofas",
         items: [
-          { label: "Sofas", href: "/en/en/o/sofas" },
+          { label: "Sofas", href: "/sofas" },
           {
             label: "Corner sofas & chaise longues",
-            href: "/en/en/o/corner-sofas-chaise-longues",
+            href: "/corner-sofas-chaise-longues",
           },
           { label: "Modular sofas", href: "/en/en/o/modular-sofas" },
           { label: "Sofa beds", href: "/en/en/o/sofa-beds-and-daybeds" },

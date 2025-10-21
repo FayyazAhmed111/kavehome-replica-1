@@ -163,10 +163,10 @@ export default function KaveHomeHeaderReplica() {
       >
         <header
           className={`border-b ${isAuthPage
-            ? "border-black/10" // visible on white background
+            ? "border-black/10" 
             : !atTop
-              ? "border-black/10" // visible when scrolled
-              : "border-white/25" // visible on transparent/white text mode
+              ? "border-black/10"
+              : "border-white/25" 
             }`}
         >
 

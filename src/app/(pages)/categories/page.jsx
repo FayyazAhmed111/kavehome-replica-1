@@ -16,6 +16,7 @@ const Categories = () => {
                         href={`/categories/${encodeURIComponent(cat.title.toLowerCase())}`}
                         className="block bg-[#f9f9f7] rounded-lg border border-gray-200 p-6 text-center hover:shadow-md transition-all"
                     >
+
                         <div className="aspect-square bg-[#eee] mb-3"></div>
                         <h3 className="text-lg font-medium">{cat.title}</h3>
                         <p className="text-sm text-gray-500 mt-1">See all</p>
