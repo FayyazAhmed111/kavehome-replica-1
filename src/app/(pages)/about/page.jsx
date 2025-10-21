@@ -3,13 +3,27 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <main id="kavehome-body" className="bg-[#F2F1E7]">
+    <main id="kavehome-body" className="bg-[#F2F1E7] w-full mt-0  grow-1">
       {/* =========================
           HERO (EXACT 100vh)
       ========================== */}
-      <section className="relative w-full h-screen overflow-hidden">
+
+      <div className="relative flex flex-col items-center justify-center  overflow-hidden">
+        <div className=" absolute z-[1]  flex items-center flex-col w-full max-w-full">
+          <h1
+            className="
+              text-white font-normal text-center
+              font-kave-haffertext
+              [line-height:82px] md:text-[82px]
+              sm:text-[58px] sm:[line-height:62px]
+              text-[58px] 
+            "
+          >
+            About us
+          </h1>
+        </div>
         {/* background image (desktop/mobile) */}
-        <picture className="absolute inset-0">
+        <picture className="flex w-full ">
           <source
             srcSet="https://d.media.kavehome.com/image/upload/v1756376090/cms/landing-about-us-img-01.jpg"
             media="(min-width:768px)"
@@ -26,21 +40,8 @@ export default function AboutPage() {
           />
         </picture>
 
-        {/* center title (compensate navbar height ~96px so it sits visually like screenshot) */}
-        <div className="relative z-[1] h-full flex items-center justify-center pt-[96px]">
-          <h1
-            className="
-              text-white font-normal text-center
-              font-kave-haffertext
-              [line-height:82px] md:text-[82px]
-              sm:text-[58px] sm:[line-height:62px]
-              text-[58px] 
-            "
-          >
-            About us
-          </h1>
-        </div>
-      </section>
+
+      </div>
 
       {/* =========================
           OUR STORY (Left block)
