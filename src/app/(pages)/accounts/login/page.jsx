@@ -101,7 +101,7 @@ export default function LoginPage() {
       "
               />
               <span
-                className="absolute right-3 top-[10px] text-[#666] cursor-pointer"
+                className="absolute right-3 top-[13px] text-[#666] cursor-pointer"
                 onClick={() => setShowPassword((prev) => !prev)}
               >
                 {showPassword ? (
