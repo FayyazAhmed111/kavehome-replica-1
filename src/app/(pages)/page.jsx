@@ -11,6 +11,8 @@ const Carousel = () => {
       bg: "shadow-gradient",
       media: "image",
       src: "/images/slide-1.avif",
+      mobileSrc:
+        "https://d.media.kavehome.com/image/fetch/w_auto,c_pad,f_auto/https://media.kavehome.com/media/images/promotions/hero-slides/bfd03d08c917489c959fe6db2beb16d3.jpg",
       alt: "Warm furniture collection",
       align: "center",
       shadow: true
@@ -82,7 +84,7 @@ const Carousel = () => {
       {slides.map((slide) => (
         <section
           key={slide.id}
-          className={`min-h-screen w-full relative flex items-center ${slide.align === "left" ? " justify-start pl-6 md:pl-16" : "justify-center"}`}
+          className={`min-h-screen w-full relative flex items-center ${slide.align === "left" ? "  justify-start pl-6 md:pl-16" : "justify-center"}`}
         >
           {/* Gradient x*/}
           <div className={`absolute inset-0 z-20 w-full h-[20%] opacity-60 ${slide.shadow ? slide.bg : ""}`} />
@@ -101,24 +103,49 @@ const Carousel = () => {
             </video>
           ) : (
               <div className="">
-                <img
+                {/* <img
                   src={slide.src}
                   alt={slide.alt || slide.title}
                   className="absolute inset-0 z-10 w-full h-full object-cover  "
                   loading={slide.id === 1 ? "eager" : "lazy"}
-                />
+                /> */}
+                {slide.id === 1 && slide.mobileSrc ? (
+                  <>
+                    <img
+                      src={slide.mobileSrc}
+                      alt={slide.alt || slide.title}
+                      className="absolute inset-0 z-10 w-full h-full object-cover block sm:hidden"
+                      loading="eager"
+                    />
+                    <img
+                      src={slide.src}
+                      alt={slide.alt || slide.title}
+                      className="absolute inset-0 z-10 w-full h-full object-cover hidden sm:block"
+                      loading="eager"
+                    />
+                  </>
+                ) : (
+                  <img
+                    src={slide.src}
+                    alt={slide.alt || slide.title}
+                    className="absolute inset-0 z-10 w-full h-full object-cover"
+                    loading={slide.id === 1 ? "eager" : "lazy"}
+                  />
+                )}
+
+
               </div>
           )}
 
           <div className="absolute inset-0" />
 
-          <div className={`relative z-10 px-6 max-w-2xl text-white ${slide.align === "left" ? "text-left" : "text-center"}`}>
+          <div className={`relative z-10 px-6 max-w-2xl text-white ${slide.align === "left" ? "text-center md:text-left" : "text-center"}`}>
             <motion.h1
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.45 }}
               variants={rise}
-              className="text-6xl md:text-[80px] mb-4 font-kave-haffer tracking-tight "
+              className="text-[40px] md:text-[80px] mb-4 font-kave-haffer tracking-tight "
             >
               {slide.title}
             </motion.h1>
@@ -128,7 +155,7 @@ const Carousel = () => {
               whileInView="show"
               viewport={{ once: true, amount: 0.45 }}
               variants={rise}
-              className="text-lg md:text-xl font-light mb-8 text-neutral-00/90"
+              className="text-[14px] md:text-xl font-light mb-8 font-poppins tracking-tighter text-neutral-00/90"
             >
               {slide.subtitle}
             </motion.p>
@@ -140,7 +167,7 @@ const Carousel = () => {
               variants={rise}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="px-8 py-3 border-2 border-neutral-00 text-neutral-00 hover:bg-neutral-00 hover:text-neutral-100 transition font-light"
+              className="px-8 py-3 text-[12px] md:text-lg border-2 border-neutral-00 text-neutral-00 hover:bg-neutral-00 hover:text-neutral-100 transition font-light"
             >
               View products
             </motion.button>

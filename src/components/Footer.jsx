@@ -34,7 +34,7 @@ const Footer = () => {
               {/* Text */}
               <div
                 className="
-            flex flex-col flex-wrap content-end 
+            flex flex-col flex-wrap md:content-end 
             border-b border-[var(--color-neutral-40)] 
             m-[0_24px] 
             py-8 pb-12 
@@ -61,7 +61,7 @@ const Footer = () => {
               {/* Logos */}
               <div
                 className="
-            flex items-center gap-12 overflow-x-scroll scrollbar-hide
+            flex items-center gap-6 md:gap-12  scrollbar-hide
             px-6 py-8 pb-10 md:px-0 md:py-0 md:pb-0
             lg:overflow-x-visible lg:justify-end lg:px-[60px] lg:pr-[90px]
             xl:px-[60px] xl:pr-[96px]
@@ -155,6 +155,7 @@ const Footer = () => {
 
 
         </ul>
+
         <LangSelector />
 
         {/* Newsletter */}

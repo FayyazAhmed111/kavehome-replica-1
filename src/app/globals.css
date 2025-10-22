@@ -84,6 +84,11 @@
 
     
   }
+body.no-scroll,
+html.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+}
 
 
   body {

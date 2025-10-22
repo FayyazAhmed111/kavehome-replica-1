@@ -20,10 +20,10 @@ export default function LangSelector({
 
     const wrapper =
         `
-      flex ${inFooter ? "justify-center" : "justify-start"}
-      md:justify-end items-center gap-4 py-2 md:py-0
+      flex ${inFooter ? "justify-center" : "justify-center md:justify-start"}
+      md:justify-end  items-center gap-4 py-2 md:py-0
       relative
-      lg:[grid-area:1/5/1/6] lg:[height:min-content] lg:mt-[130px] pe-20
+      lg:[grid-area:1/5/1/6] lg:[height:min-content] lg:mt-[130px] md:pe-20
       text-neutral-900
     `.replace(/\s+/g, " ").trim()
 

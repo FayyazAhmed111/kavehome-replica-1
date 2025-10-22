@@ -65,10 +65,10 @@ const HomeCategoriesSection = () => {
 
             {/* Text */}
             <div className="absolute top-[20px] sm:top-[60px] md:top-[80px] lg:top-[100px] left-0 w-full text-center z-10">
-              <h2 className="font-kave-haffer text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] text-white font-semibold drop-shadow-md tracking-tight">
+              <h2 className="font-kave-haffertext  text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] text-white font-semibold drop-shadow-md tracking-tight">
                 {cat.title}
               </h2>
-              <span className="block mt-2 underline text-white text-[14px] sm:text-[16px] hover:opacity-80 transition">
+              <span className="block mt-2 underline text-white font-poppins text-[14px] sm:text-[16px] hover:opacity-80 transition">
                 Discover
               </span>
             </div>
