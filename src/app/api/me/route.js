@@ -16,7 +16,6 @@ export async function GET() {
     const baseUrl = process.env.NEXT_PUBLIC_WP_BASE_URL;
     const authHeader = `Basic ${btoa(`${email}:${token}`)}`;
 
-    // 🚀 Force fresh response — no stale cache
     const res = await fetch(`${baseUrl}/wp-json/wp/v2/users/me`, {
       headers: {
         Authorization: authHeader,

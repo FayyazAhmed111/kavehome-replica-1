@@ -4,12 +4,10 @@ export async function POST(req) {
   try {
     const { email, password } = await req.json();
 
-    // 🔐 Create Basic Auth header
     const authHeader = btoa(`${email}:${password}`);
 
     const baseUrl = process.env.NEXT_PUBLIC_WP_BASE_URL;
 
-    // 🔎 Verify credentials by hitting WP API
     const res = await fetch(`${baseUrl}/wp-json/wp/v2/users/me`, {
       headers: {
         Authorization: `Basic ${authHeader}`,
@@ -25,7 +23,6 @@ export async function POST(req) {
 
     const user = await res.json();
 
-    // ✅ FIXED: cookies() must be awaited before using
     const cookieStore = await cookies();
 
     cookieStore.set("wp_auth_token", password, {

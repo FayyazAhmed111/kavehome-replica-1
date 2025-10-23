@@ -45,8 +45,8 @@ export function useWordPressUser({ redirectToLogin = false } = {}) {
   };
 
   useEffect(() => {
-    fetchUser(true); // ✅ Always fresh on mount
-    const interval = setInterval(() => fetchUser(true), 1000 * 60 * 5); // Refresh every 5 min
+    fetchUser(true); 
+    const interval = setInterval(() => fetchUser(true), 1000 * 60 * 5); 
     return () => clearInterval(interval);
   }, []);
 
