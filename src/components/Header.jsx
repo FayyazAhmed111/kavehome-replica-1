@@ -234,7 +234,7 @@ function useOnClickOutside(ref, handler) {
                                   </div>
 
                                   {/* Wishlist links to page (no popover) */}
-                                  <a aria-label="Wishlist" className="p-1" href="/en/en/wishlists/">
+                                  <a aria-label="Wishlist" className="p-1" href="/wishlists/">
                                       <FiHeart size={20} />
                                   </a>
 

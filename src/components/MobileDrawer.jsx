@@ -116,19 +116,19 @@ export default function MobileDrawer({ drawerOpen, setDrawerOpen }) {
 
                                 {/* Footer */}
                                 <div className="mt-auto pt-6 text-[14px] px-6 text-black/80 leading-relaxed">
-                                    <a href="/en/en/stores/" className="block hover:text-black">
+                                    <a href="#" className="block hover:text-black">
                                         Our stores
                                     </a>
-                                    <a href="/en/en/about-us/" className="block hover:text-black">
+                                    <a href="/about" className="block hover:text-black">
                                         About us
                                     </a>
-                                    <a href="/en/en/kave-cares/" className="block hover:text-black">
+                                    <a href="#" className="block hover:text-black">
                                         Responsible practices
                                     </a>
-                                    <a href="https://help.kavehome.com" className="block hover:text-black">
+                                    <a href="#" className="block hover:text-black">
                                         FAQs
                                     </a>
-                                    <a href="/en/en/accounts/account/" className="hover:text-black">
+                                    <a href="/accounts/dashboard" className="hover:text-black">
                                         My account
                                     </a>
                                     <div className="pt-3 mb-1 mt-4 text-black flex gap-2 text-[12px] items-center">

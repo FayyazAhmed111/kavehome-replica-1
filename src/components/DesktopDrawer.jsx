@@ -109,19 +109,19 @@ export default function DesktopDrawer({
 
                             {/* FOOTER LINKS */}
                             <div className="mt-auto mb-8 flex flex-col gap-[3px] text-[14px] font-[450] leading-relaxed">
-                                <a href="/en/en/stores/" className="hover:text-black">
+                                <a href="#" className="hover:text-black">
                                     Our stores
                                 </a>
-                                <a href="/en/en/about-us/" className="hover:text-black">
+                                <a href="/about" className="hover:text-black">
                                     About us
                                 </a>
-                                <a href="/en/en/kave-cares/" className="hover:text-black">
+                                <a href="#" className="hover:text-black">
                                     Responsible practices
                                 </a>
-                                <a href="https://help.kavehome.com" className="hover:text-black">
+                                <a href="#" className="hover:text-black">
                                     FAQs
                                 </a>
-                                <a href="/en/en/accounts/account/" className="hover:text-black">
+                                <a href="/accounts/dashboard" className="hover:text-black">
                                     My account
                                 </a>
                                 <div className="pt-3 mb-1 mt-4 text-black flex gap-2 text-[12px] items-center">
