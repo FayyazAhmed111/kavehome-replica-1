@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-export default function ProductsPage() {
+export default function SingleProductPage() {
   
 
   return (
-    <div>Products Page</div>
+    <div>Single Product Page</div>
   );
 }
