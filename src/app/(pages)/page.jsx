@@ -1,6 +1,6 @@
 "use client"
 
-import HomeCategoriesSection from "@/components/HomeCategoriesSection"
+import HomeCategoriesSection from "../../components/HomeCategoriesSection"
 import { motion } from "framer-motion"
 const Carousel = () => {
   const slides = [

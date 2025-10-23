@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TfiClose } from "react-icons/tfi";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import { NAV_JSON } from "@/data/navData";
+import { NAV_JSON } from "../data/navData";
 import Image from "next/image";
 import { SliderInspiration } from "./SliderSection";
 import { ChevronDown } from "lucide-react";

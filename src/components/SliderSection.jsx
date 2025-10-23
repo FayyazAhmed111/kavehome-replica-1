@@ -8,8 +8,9 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/components/ui/carousel"; import { ChevronLeft, ChevronRight } from "lucide-react";
-``
+} from "../components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 // import Autoplay from "embla-carousel-autoplay";
 
 export function SliderInspiration({ title, items = [], rightLink }) {

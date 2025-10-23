@@ -5,7 +5,7 @@ import {
   FiChevronRight,
   FiChevronLeft,
 } from "react-icons/fi";
-import { NAV_JSON } from "@/data/navData";
+import { NAV_JSON } from "../data/navData";
 import Header from "./Header";
 import DesktopDrawer from "./DesktopDrawer";
 import MobileDrawer from "./MobileDrawer";

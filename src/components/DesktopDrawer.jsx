@@ -5,7 +5,7 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { SliderInspiration } from "./SliderSection";
-import { NAV_JSON } from "@/data/navData";
+import { NAV_JSON } from "../data/navData";
 
 export default function DesktopDrawer({
     drawerOpen,
