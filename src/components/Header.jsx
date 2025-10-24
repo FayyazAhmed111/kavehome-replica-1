@@ -18,7 +18,10 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
      const pathname = usePathname();
-      const isAuthPage = pathname.includes("/accounts/login") || pathname.includes("/accounts/register");
+     const isAuthPage =
+        pathname.includes("/accounts/login") ||
+        pathname.includes("/accounts/register") || 
+        pathname.includes("/cart")
     
     const [hidePromo, setHidePromo] = useState(false);
     const PROMO_SLIDES = [

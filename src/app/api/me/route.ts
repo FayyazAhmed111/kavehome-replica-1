@@ -30,7 +30,6 @@ export async function GET() {
     });
 
     const { viewer } = await client.request(VIEWER_QUERY);
-
     return NextResponse.json({ loggedIn: !!viewer, user: viewer ?? null });
   } catch (error: any) {
     console.error("Viewer fetch error:", error);
