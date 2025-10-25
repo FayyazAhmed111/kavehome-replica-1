@@ -1,15 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Info } from "lucide-react";
 // import { EditIcon } from './../../../../components/icons/EditIcon';
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "../../../../components/ui/carousel";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../../../../components/ui/drawer";
 export default function Page({ params }) {
   const [quantity, setQuantity] = useState(1);
-
   const [loading, setLoading] = useState(false);
 
+  const [isHovered, setIsHovered] = useState(false);
+  const [api, setApi] = useState(null);
   const handleClick = () => {
     setLoading(true);
 
@@ -17,7 +34,11 @@ export default function Page({ params }) {
       setLoading(false);
     }, 3000);
   };
+  const [openSection, setOpenSection] = useState(null);
 
+  const toggleSection = (section) => {
+    setOpenSection(openSection === section ? null : section);
+  };
   // KaveHome-style subtle scanning bar (fades out quickly)
   const [showScan, setShowScan] = useState(true);
   useEffect(() => {
@@ -25,10 +46,9 @@ export default function Page({ params }) {
     return () => clearTimeout(id);
   }, []);
 
-  // Left gallery tiles (static, no carousel) — sized/placed to match the screenshot
   const galleryTiles = [
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_4:3,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
       alt: "Veliro front view",
       overlay3D: true,
     },
@@ -37,23 +57,23 @@ export default function Page({ params }) {
       alt: "Veliro ambience tall",
     },
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_4:3,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
       alt: "Veliro detail arm",
     },
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_4:3,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1754907497/ambiences/A25S107_020.jpg",
       alt: "Veliro in library ambience",
     },
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_16:9,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360640/products/S81330ZF06_1D02.jpg",
       alt: "Veliro cushion close-up",
     },
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_4:3,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360649/products/S81330ZF06_1V02.jpg",
       alt: "Veliro perspective left",
     },
     {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_16:9,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
+      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360641/products/S81330ZF06_1D03.jpg",
       alt: "Veliro base and legs close-up",
     },
 
@@ -89,8 +109,35 @@ export default function Page({ params }) {
         "https://d.media.kavehome.com/image/upload/w_380,c_fill,f_auto/v1759930428/products/X00585FA06_1V01.jpg",
       href: "/en/en/p/zarn-mini-boucle-effect-wool-blend-rug-200-x-300cm",
     },
+    {
+      name: "Zarn mini bouclé effect wool blend rug 200 x 300cm",
+      price: "449 €",
+      image:
+        "https://d.media.kavehome.com/image/upload/w_340,c_fill,f_auto/v1747030915/products/D00450KK39_1V01.jpg",
+      href: "/en/en/p/zarn-mini-boucle-effect-wool-blend-rug-200-x-300cm",
+    },
+    {
+      name: "Zarn mini bouclé effect wool blend rug 200 x 300cm",
+      price: "449 €",
+      image:
+        "https://d.media.kavehome.com/image/upload/w_340,c_fill,f_auto/v1748000195/products/D00421CP35_1V01.jpg",
+      href: "/en/en/p/zarn-mini-boucle-effect-wool-blend-rug-200-x-300cm",
+    },
   ];
+  // const scrollLeft = () => {
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollBy({ left: -250, behavior: "smooth" });
+  //   }
+  // };
 
+  // const scrollRight = () => {
+  //   if (carouselRef.current) {
+  //     carouselRef.current.scrollBy({ left: 250, behavior: "smooth" });
+  //   }
+  // };
+
+  // const scrollPrev = () => api && api.scrollPrev();
+  // const scrollNext = () => api && api.scrollNext();
   return (
     <main className=" md:mt-[113px] mt-[104px] grow-1 w-full">
       {/* <div className="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden">
@@ -152,24 +199,25 @@ export default function Page({ params }) {
               {galleryTiles.map((t, idx) => (
                 <div
                   key={idx}
-                  className="detail-gallery_galleryItem__PwmAx relative w-full min-w-[100vw]
+                  className="detail-gallery_galleryItem__PwmAx relative  min-w-[auto]
                  scroll-snap-start [scroll-snap-stop:always]
                  bg-[var(--kh-neutral-10)] md:min-w-auto"
                 >
-                  <img
-                    src={t.src}
-                    alt={t.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <button className=" aspect-[inherit] cursor-pointer">
+                    <img
+                      src={t.src}
+                      alt={t.alt}
+                      className="h-full w-full  object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </button>
                 </div>
               ))}
             </div>
 
-
             {/* View more images button */}
-            <div className="flex items-center justify-center ">
+            <div className="flex items-center justify-center mt-3">
               <button className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-medium hover:border-neutral-400">
                 View more images
               </button>
@@ -231,8 +279,7 @@ export default function Page({ params }) {
             {/* Variant selector */}
             <div className="selectors flex flex-col gap-5">
               <div>
-                <button className="flex w-full cursor-pointer items-center flex-row gap-[16px] justify-between rounded-lg border border-neutral-30 p-2 ">
-
+                {/* <button className="flex w-full cursor-pointer items-center flex-row gap-[16px] justify-between rounded-lg border border-neutral-30 p-2 ">
                   <div className="flex items-center flex-row gap-4">
                     <div className="max-w-[50px] text-[10px] text-neutral-40 overflow-hidden">
                       <img
@@ -253,7 +300,72 @@ export default function Page({ params }) {
                       </svg>
                     </span>
                   </div>
-                </button>
+                </button> */}
+
+
+
+
+
+
+
+                <Drawer direction="right" className="">
+                  {/* 🔹 Drawer Trigger */}
+                  <DrawerTrigger asChild>
+                    <button className="flex w-full  cursor-pointer items-center flex-row gap-[16px] justify-between rounded-lg border border-neutral-30 p-2">
+                      <div className="flex items-center flex-row gap-4">
+                        <div className="max-w-[50px] text-[10px] text-neutral-40 overflow-hidden">
+                          <img
+                            src="https://d.media.kavehome.com/image/upload/w_120,c_pad,ar_1,f_auto/v1755076521/entities/model-variants/S81330.png"
+                            alt="3-seater sofa"
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                        <div className="flex flex-col text-left items-start text-neutral-80 text-[14px]">
+                          <div className=" text-[13px] text-neutral-100">3-seater sofa</div>
+                          <div className="text-[13px] text-neutral-60">240 cm</div>
+                        </div>
+                      </div>
+                      <div>
+                        <span className="overflow-hidden flex align-middle">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M9 18L15 12L9 6"
+                              stroke="#000000"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </button>
+                  </DrawerTrigger>
+
+                  {/* 🔹 Drawer Content */}
+                  <DrawerContent className="right-0 top-0 z-[1000] fixed h-full min-w-[600px] max-w-[720px] w-full rounded-none border-l bg-white shadow-xl">
+                    <DrawerHeader>
+                      <DrawerTitle>Choose an option</DrawerTitle>
+                    </DrawerHeader>
+
+                    <div className="p-4 flex flex-col gap-4">
+                      {[
+                        { title: "Veliro 2-seater sofa", subtitle: "2-seater sofa", size: "210 cm" },
+                        { title: "Veliro 3-seater sofa", subtitle: "3-seater sofa", size: "240 cm" },
+                        { title: "Veliro footrest", subtitle: "Footrest", size: "85 x 90 cm" },
+                      ].map((item, i) => (
+                        <button
+                          key={i}
+                          className="flex justify-between items-center border rounded-lg p-3 hover:bg-neutral-50 transition"
+                        >
+                          <div className="flex flex-col text-left">
+                            <span className="font-medium text-neutral-900">{item.title}</span>
+                            <span className="text-neutral-600 text-sm">{item.subtitle}</span>
+                          </div>
+                          <span className="text-neutral-500">{item.size}</span>
+                        </button>
+                      ))}
+                    </div>
+
+                  </DrawerContent>
+                </Drawer>
               </div>
 
               {/* Type */}
@@ -329,14 +441,18 @@ export default function Page({ params }) {
               </div>
             </div>
 
+
+
             {/* Bag Add */}
             <div className="">
+
               <div className="flex md:gap-5 gap-2 flex-row">
+
                 <div className="w-[85px] min-w-[85px] add-to-cart__container">
                   <div className="select-box w-full mb-0 text-[12px] ">
                     <label
                       htmlFor="select-quantity"
-                      className="flex flex-col m-0 relative gap-2"                    >
+                      className="flex flex-col m-0 relative gap-2">
                       <select
                         id="select-quantity"
                         aria-label="Select quantity"
@@ -351,12 +467,12 @@ export default function Page({ params }) {
                         ))}
                       </select>
 
-                      <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2">
+                      <span className="pointer-events-none m-0 p-0 absolute right-3 bottom-3.5 ">
                         <svg
                           viewBox="0 0 24 24"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4 text-black"
+                          className="w-5 h-5 text-black"
                         >
                           <path
                             d="M6.35355 8.64645C6.15829 8.45118 5.84171 8.45118 5.64645 8.64645C5.45118 8.84171 5.45118 9.15829 5.64645 9.35355L6.35355 8.64645ZM12 15L11.6464 15.3536L12 15.7071L12.3536 15.3536L12 15ZM18.3536 9.35355C18.5488 9.15829 18.5488 8.84171 18.3536 8.64645C18.1583 8.45118 17.8417 8.45118 17.6464 8.64645L18.3536 9.35355ZM5.64645 9.35355L11.6464 15.3536L12.3536 14.6464L6.35355 8.64645L5.64645 9.35355ZM12.3536 15.3536L18.3536 9.35355L17.6464 8.64645L11.6464 14.6464L12.3536 15.3536Z"
@@ -368,72 +484,144 @@ export default function Page({ params }) {
                   </div>
                 </div>
 
-                {loading ? (
-                  <button
-                    disabled
-                    className="flex-1  bg-black px-6 py-3 font-medium text-white 
+                {/* ADD TO BaG */}
+                <div className="flex-1  ">
+                  {loading ? (
+                    <button
+                      disabled
+                      className="w-full bg-black  h-[48px] m-h-[48px] text-[16px] font-normal px-6 py-4 text-white 
                      transition-colors hover:bg-neutral-800 
                      disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
-                      Adding to bag...
-                    </span>
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleClick}
-                    className="flex-1  cursor-pointer bg-black px-6 py-3 font-medium text-white 
+                    >
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent"></span>
+                        Adding to bag...
+                      </span>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={handleClick}
+                        className="bg-black w-full px-6 py-4 text-white cursor-pointer h-[48px] m-h-[48px] text-[16px] font-normal
+                       border-0  shadow-none relative leading-0.5 decoration-0 
                      transition-colors hover:bg-neutral-800"
-                  >
-                    Add to shopping bag
-                  </button>
-                )}
+                      >
+                      <span className="flex items-center justify-center text-center">
+                        <span className="font-kave-haffertext">Add to shopping bag</span>
+                      </span>
+                    </button>
+                  )}
+                </div>
+
               </div>
             </div>
 
             {/* Bulky item note */}
-            <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4">
-              <div className="flex items-start gap-3">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#000000">
-                  <path d="M12 2C13.1046 2 14 2.89543 14 4C14 5.10457 13.1046 6 12 6C10.8954 6 10 5.10457 10 4C10 2.89543 10.8954 2 12 2Z" />
-                  <path d="M12 8C12.5523 8 13 8.44772 13 9V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V9C11 8.44772 11.4477 8 12 8Z" />
-                  <path d="M12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18C12.5523 18 13 18.4477 13 19C13 19.5523 12.5523 20 12 20Z" />
-                </svg>
-                <div>
-                  <div className="font-semibold">This item is bulky</div>
-                  <div className="mt-1 text-sm text-neutral-700">
-                    <p>For the best delivery experience, we recommend checking the package dimensions.</p>
-                    <button className="mt-1 underline">See details</button>
-                  </div>
+            <div className="pt-4">
+              <div className=" text-black flex gap-[12px] bg-neutral-20 p-3">
+                <span>
+                  <Info className="text-neutral-80" size={20} />
+                </span>
+                <div className="flex-1 flex flex-col gap-1">
+                  <span className="font-semibold font-poppins text-[12px]">This item is bulky</span>
+                  <span className="mt-1 font-normal font-poppins text-[12px]">
+                    <div>
+                      <p className="font-[12px] text-black">For the best delivery experience, we recommend checking the package dimensions.</p>
+                      <button className="text-[12px] w-fit font-kave-haffertext font-normal cursor-pointer  underline">
+                        <span>See details</span>
+                      </button>
+                    </div>
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* Accordion links (as rows with +) */}
-            <div className="divide-y divide-neutral-200 border-t border-neutral-200">
-              <a
-                href="#productDetails"
-                className="flex items-center justify-between py-4 text-neutral-900 hover:underline"
-              >
-                <span>Product details</span>
-                <span className="text-xl">+</span>
-              </a>
-              <button className="flex w-full items-center justify-between py-4 text-left text-neutral-900 hover:underline">
-                <span>Shipping & returns</span>
-                <span className="text-xl">+</span>
-              </button>
-              <button className="flex w-full items-center justify-between py-4 text-left text-neutral-900 hover:underline">
-                <span>Product care</span>
-                <span className="text-xl">+</span>
-              </button>
-            </div>
+            {/* Accordion links */}
+            <div className="xl:p-0 lg:py-0 lg:px-12 flex flex-col gap-4 mt-4 ">
+              <div className="flex flex-col gap-0 w-full">
+                <div className=" border-b border-neutral-20">
+                  <a
+                    href="#productDetails"
+                    className=" flex text-[12px] items-center font-normal justify-between py-1.5  text-neutral-900 hover:underline"
+                  >
+                    <span>Product details</span>
+                  </a>
+                </div>
 
+                <div className="border-b border-neutral-20">
+                  <button onClick={() => toggleSection("shipping")} className="cursor-pointer flex text-[12px] w-full items-center font-normal justify-between py-1.5  text-left text-neutral-900 ">
+                    <span>Shipping & returns</span>
+                    <span className="text-[24px] font-extralight text-neutral-40">
+                      {openSection === "shipping" ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {openSection === "shipping" && (
+                    <div className="mt-2 text-[12px] text-neutral-700 space-y-1">
+                      <p>
+                        <strong>Home Standard Detail</strong>
+                      </p>
+                      <ul className="list-disc ml-4">
+                        <li>
+                          The cost varies according to your country of delivery.{" "}
+                          <a
+                            href="#"
+                            className="text-black underline hover:no-underline"
+                          >
+                            Check our shipping and delivery conditions.
+                          </a>
+                        </li>
+                        <li>
+                          This product is made to order and is considered personalized.
+                          Therefore, returns due to withdrawal will not be accepted. The
+                          rest of the product warranties will not be affected.
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                <div className="border-b border-neutral-20">
+                  <button onClick={() => toggleSection("product-care")} className="cursor-pointer flex text-[12px] w-full items-center  font-normal justify-between py-1.5 text-left text-neutral-900 ">
+                    <span>Product care</span>
+                    <span className="text-[24px] font-extralight text-neutral-40">
+                      {openSection === "product-care" ? "−" : "+"}
+                    </span>                  </button>
+                  {openSection === "product-care" && (
+                    <div className="mt-2 mb-3 text-[12px] text-neutral-800 leading-relaxed">
+                      <p>Conserve this product’s qualities by caring for it properly.</p>
+                      <a
+                        href="#"
+                        className="mt-2 inline-flex items-center gap-1 text-neutral-900 "
+                      >
+                        <strong>Find out how</strong>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="inline-block"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 4.5H19.5V10.5M19.5 4.5L10.5 13.5M19.5 19.5H4.5V4.5"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
+                </div>
+
+              </div>
+            </div>
             <div className="text-right text-sm text-neutral-600">SKU: <strong>S81330ZF06</strong></div>
           </div>
 
           {/* “Complete your look” — positioned under sticky info (right column) */}
-          <div className="mt-10">
+          {/* <div className="mt-10">
             <h3 className="mb-4 text-xl font-light">Complete your look</h3>
             <div className="flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((p, i) => (
@@ -448,89 +636,173 @@ export default function Page({ params }) {
                 </a>
               ))}
             </div>
+          </div> */}
+          <div
+            className="relative mt-10 group"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <h3 className="mb-4 text-xl font-light">Complete your look</h3>
+
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {relatedProducts.map((p, i) => (
+                  <CarouselItem
+                    key={i}
+                    className="pl-2 md:pl-4 basis-[40%] sm:basis-[45%] md:basis-[30%] lg:basis-[31.8%]"
+                  >
+                    <a
+                      href={p.href}
+                      className="block transition-all duration-200 hover:opacity-90"
+                    >
+                      <div className="mb-3 aspect-[4/5] w-full overflow-hidden bg-[#f7f5f2]">
+                        <img
+                          src={p.image}
+                          alt={p.name}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+
+                      <div className="space-y-1 px-2">
+                        <div className="text-sm font-semibold text-neutral-900">
+                          {p.name.split(" ")[0]}
+                        </div>
+                        <div className="text-[12px] text-neutral-700 line-clamp-2">
+                          {p.name}
+                        </div>
+                        <div className="text-sm font-semibold text-neutral-900">
+                          {p.price}
+                        </div>
+                      </div>
+                    </a>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious
+                className={`z-10 border-0 bg-white/80 hover:bg-white text-neutral-800 shadow-sm rounded-full size-7
+                  absolute top-1/2 -left-5 -translate-y-15 transition-opacity
+                  ${isHovered ? "opacity-100" : "opacity-0"}`}
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </CarouselPrevious>
+
+              <CarouselNext
+                className={`z-10 border-0 bg-white/80 hover:bg-white text-neutral-800 shadow-sm rounded-full size-7
+                  absolute top-1/2 -right-5 -translate-y-15 transition-opacity
+                  ${isHovered ? "opacity-100" : "opacity-0"}`}
+              >
+                <ChevronRight className="w-4 h-4" />
+              </CarouselNext>
+            </Carousel>
           </div>
         </div>
       </section>
 
-      {/* TECHNICAL DETAILS (matches your earlier section) */}
-      <section id="productDetails" className="bg-neutral-100 py-16">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2">
-            {/* About product */}
-            <div>
-              <h3 className="mb-6 text-2xl">About this product</h3>
-              <ul className="space-y-3 text-sm text-neutral-700">
-                <li className="flex items-start">
+
+
+
+      {/* About product */}
+
+      <section id="productDetails" className=" xl:mt-[48px] lg:mt-[12px] flex flex-col">
+        <div className="bg-neutral-10 px-[24px] py-[72px] md:p-[78px]:p-[80px] xl:py-[128px] xl:px-[160px] 2xl:py-[128px] 2xl:px-[240px]">
+          <div className="md:gap-12 md:flex-row flex flex-col  gap-6">
+            <section className="w-[50%]">
+              <h3 className="mb-6 md:text-[32px] text-[26px] font-kave-haffertext">About this product</h3>
+              <ul className="mb-4 flex flex-col gap-2 relative text-[12px] text-neutral-700">
+                <li className="flex gap-1 relative text-neutral-90 ">
                   <span className="mr-2">•</span>
                   <span>
-                    2-seater sofa upholstered in velvet fabric with a washed, matte look, made of 20% cotton, very soft
-                    to the touch and highly resistant to abrasion and light.
+                    2-seater sofa upholstered in velvet fabric with a washed, matte look, made of 20% cotton, very soft to the touch and highly resistant to abrasion and light. Machine washable on a delicate cycle. Collection produced in Spain.
                   </span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex gap-1 relative text-neutral-90 ">
                   <span className="mr-2">•</span>
                   <span>
-                    Soft seat thanks to the blend of 28kg/m3 Air System foams, with high durability and recovery,
-                    down-effect fibre and webbing suspension system.
+                    Soft seat thanks to the blend of 28kg/m3 Air System foams, with high durability and recovery, down-effect fibre and webbing suspension system. The backrest and lumbar cushions are filled with down-effect fibre.
                   </span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex gap-1 relative text-neutral-90 ">
                   <span className="mr-2">•</span>
                   <span>
-                    Seat, backrest and lumbar cushion with removable covers. Black steel legs with matte,
-                    microtextured, powder-coated finish.
+                    Seat, backrest and lumbar cushion with removable covers. Black steel legs with matte, microtextured, powder-coated finish.
+                  </span>
+                </li>
+                <li className="flex gap-1 relative text-neutral-90 ">
+                  <span className="mr-2">•</span>
+                  <span>
+                    The fabric supplier is OEKO-TEX® STANDARD 100 certified for environmentally safe and responsible production.
+                  </span>
+                </li>
+                <li className="flex gap-1 relative text-neutral-90 ">
+                  <span className="mr-2">•</span>
+                  <span>
+                    FSC Mix Credit certified wood, made with a mixture of materials from FSC-certified forests and FSC-controlled wood.
                   </span>
                 </li>
               </ul>
 
               <div className="mt-8">
                 <img
-                  src="https://d.media.kavehome.com/image/upload/h_670,c_fill,w_auto,f_auto/v1753360544/measurements/S81330ZF06_1C01.jpg"
+                  src="/images/sofa.png"
                   alt="Product dimensions"
                   className="mx-auto w-full max-w-lg"
                 />
               </div>
-            </div>
+            </section>
 
-            {/* Technical specs */}
-            <div className="space-y-6">
-              <h3 className="mb-6 text-2xl">Technical Specifications</h3>
+            {/*  specs */}
+            <section className="w-[50%]">
 
-              <details className="border-b border-neutral-300 pb-4">
-                <summary className="flex cursor-pointer items-center justify-between text-lg font-medium">
-                  Dimensions
-                  <svg className="h-5 w-5 transition-transform" fill="none" viewBox="0 0 24 24">
-                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </summary>
-                <div className="mt-4 space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>Height:</span>
-                    <span>96 cm</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Width:</span>
-                    <span>106 cm</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Depth:</span>
-                    <span>240 cm</span>
-                  </div>
-                </div>
-              </details>
+              {/* MORE details? */}
 
-              <details className="border-b border-neutral-300 pb-4">
-                <summary className="flex cursor-pointer items-center justify-between text-lg font-medium">
-                  Materials
-                  <svg className="h-5 w-5 transition-transform" fill="none" viewBox="0 0 24 24">
-                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" />
-                  </svg>
-                </summary>
-                <div className="mt-4 text-sm">
-                  <p>35% Pine wood, 17% Synthetic Fibers, 15% Foam PU, 12% Acrylic fibers, 10% Fabric, and more.</p>
-                </div>
-              </details>
-            </div>
+              <div className="border-b border-neutral-30 ">
+
+                <button onClick={() => toggleSection("details")} className="cursor-pointer flex text-[14px] w-full items-center font-normal justify-between py-1.5  text-left text-neutral-900 ">
+                  <span>{openSection === "details" ? <span className="font-semibold">More Details</span> : <span>More Details</span>}</span>
+                  <span className="text-[24px] font-extralight text-neutral-40">
+                    {openSection === "details" ? "−" : "+"}
+                  </span>
+                </button>
+
+                {openSection === "details" && (
+                  <div className="mt-2  text-[12px] text-neutral-700 space-y-1">
+                    The Veliro sofa combines the timeless elegance of mid-20th century lines with new proportions, designed to offer maximum comfort in any setting. The velvet upholstery with a washed look and matte finish, made with 20% cotton, is soft and highly resistant to abrasion and light, and is machine washable on a delicate cycle. The fabric comes from a supplier certified under the OEKO-TEX® STANDARD 100 for environmentally safe and responsible production.
+
+                    It has a soft seat thanks to the combination of 28kg/m³ Air System foams, with high durability and high recovery, along with down-effect fibre for an enveloping effect and the webbing suspension system. The backrest cushions and lumbar cushions are filled with down-effect fibre. In addition, the seat, backrest and lumbar cushion covers are removable for easy cleaning and maintenance. The internal structure, made from pine wood, is FSC Mix Credit certified, made with a mix of materials from FSC-certified forests and FSC-controlled wood.
+
+                    The steel legs, with an elegant matte, micro-textured, black powder-coated finish, add stability and a contemporary touch to the piece. Produced in Spain, this sofa is a multi-functional piece that blends easily into any space thanks to its balanced design and its seat, created to provide high levels of comfort and adapt to different lifestyles.
+                  </div>
+                )}
+              </div>
+
+              {/* Package */}
+              <div className="border-b border-neutral-30 ">
+                <button onClick={() => toggleSection("package")} className="cursor-pointer flex text-[14px] w-full items-center font-normal justify-between py-1.5  text-left text-neutral-900 ">
+                  <span>{openSection === "package" ? <span className="font-semibold">Package</span> : <span>Package</span>}</span>
+                  <span className="text-[24px] font-extralight text-neutral-40">
+                    {openSection === "package" ? "−" : "+"}
+                  </span>
+                </button>
+
+                {openSection === "package" && (
+                  <div className="mt-2 text-[12px] text-neutral-700 space-y-1">
+                    , with an elegant matte, micro-textured, black powder-coated finish, add stability and a contemporary touch to the piece. Produced in Spain, this sofa is a multi-functional piece that blends easily into any space thanks to its balanced design and its seat, created to provide high levels of comfort and adapt to different lifestyles.
+                  </div>
+                )}
+              </div>
+
+
+
+
+
+            </section>
+
           </div>
         </div>
       </section>

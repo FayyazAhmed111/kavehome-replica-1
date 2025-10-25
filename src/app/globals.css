@@ -138,7 +138,6 @@ html.no-scroll {
   
 }
 
-
 .add-to-cart__container select {
   transform: none;
   margin-right: 0;
@@ -158,15 +157,13 @@ html.no-scroll {
   outline: 1px solid var(--color-neutral-50);
   font-size: 14px;
   width: 100%;
-
 }
 
 @media only screen and (min-width: 768px) {
   .select-box select {
     transform: none;
     margin-right: 0;
-      transform-origin: initial;
-
+    transform-origin: initial;
   }
 }
 
@@ -177,7 +174,7 @@ html.no-scroll {
   border: 1px solid var(--color-neutral-50);
   background: var(--color-neutral-00);
   color: var(--color-neutral-100);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
   font-weight: 400;
   border-radius: 0;
@@ -188,6 +185,13 @@ html.no-scroll {
   -moz-appearance: none;
   text-overflow: ellipsis;
 }
+
+.select-box select:focus,
+.select-box select:active {
+  border-color: #000; 
+  outline: none;
+}
+
 
 
 /* @media (prefers-color-scheme: dark) {
