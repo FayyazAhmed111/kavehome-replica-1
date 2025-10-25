@@ -25,6 +25,7 @@ export function useAuth() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
+      mode: "cors",
       body: JSON.stringify({ username, password }),
     });
     if (!res.ok) throw new Error("Login failed");

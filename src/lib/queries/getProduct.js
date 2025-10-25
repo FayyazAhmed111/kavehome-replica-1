@@ -4,6 +4,7 @@ export const GET_PRODUCT_BY_SLUG = gql`
   query GetProduct($slug: ID!) {
     product(id: $slug, idType: SLUG) {
       id
+      databaseId
       name
       slug
       sku
