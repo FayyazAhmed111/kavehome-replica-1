@@ -170,6 +170,60 @@ export default function Page({ params }) {
     },
   ];
 
+  // Related Products
+  const relatedProducts = [
+    {
+      id: 1,
+      title: "Veliro",
+      description:
+        "Veliro beige chenille 3-seater sofa with black steel legs 240 cm",
+      price: "1,695 €",
+      colors: ["#f6f5dc", "#b0c98a"],
+      imageNormal:
+        "https://d.media.kavehome.com/image/upload/w_340,c_pad,ar_0.8,f_auto,dpr_2/v1753360650/products/S81330ZF06_1V01.jpg",
+      imageHover:
+        "https://d.media.kavehome.com/image/upload/w_340,c_pad,ar_0.8,f_auto,dpr_2/v1753360640/products/S81330ZF06_1D02.jpg",
+    },
+    {
+      id: 2,
+      title: "Veliro",
+      description:
+        "Veliro green chenille 3-seater sofa with black steel legs 240 cm",
+      price: "1,695 €",
+      colors: ["#a4b795", "#d2d7b5"],
+      imageNormal:
+        "https://d.media.kavehome.com/image/upload/w_340,c_pad,ar_0.8,f_auto,dpr_2/v1753942711/products/S81330EL39_1V01.jpg",
+      imageHover:
+        "https://d.media.kavehome.com/image/upload/w_340,c_pad,ar_0.8,f_auto,dpr_2/v1753942713/products/S81330EL39_1D02.jpg",
+    },
+
+  ];
+
+
+  const storeBanners = [
+    {
+      id: 1,
+      image:
+        "https://d.media.kavehome.com/image/upload/w_900,f_auto,dpr_2/v1732030551/shop-banner/shops-banner-0.png",
+    },
+    {
+      id: 2,
+      image:
+        "https://d.media.kavehome.com/image/upload/w_900,f_auto,dpr_2/v1732030552/shop-banner/shops-banner-1.png",
+    },
+    {
+      id: 3,
+      image:
+        "https://d.media.kavehome.com/image/upload/w_900,f_auto,dpr_2/v1732030551/shop-banner/shops-banner-2.png",
+    },
+    {
+      id: 4,
+      image:
+        "https://d.media.kavehome.com/image/upload/w_900,f_auto,dpr_2/landings/inspiracional/img-landing-inspo-store-01.jpg",
+    },
+  ];
+
+
   const [openSection, setOpenSection] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -488,12 +542,12 @@ export default function Page({ params }) {
       w-full text-center
     "
         >
-          <h3 className="text-[18px] md:text-[20px] font-medium text-neutral-900 mb-2">
+          <h3 className="text-[18px] md:text-[20px] font-kave-haffertext font-light text-neutral-900 mb-2">
             Our furniture in your home
           </h3>
           <p className="text-[13px] text-neutral-500 mb-6">
             Mention us, tag us or use the hashtag{" "}
-            <span className="text-neutral-900 font-medium">KaveHome</span> in your posts
+            <span className="x">#KaveHome</span> in your posts
             and you could appear here.
           </p>
 
@@ -560,14 +614,14 @@ export default function Page({ params }) {
 
               {/* Controls */}
               <CarouselPrevious
-                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -left-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                   }`}
               >
                 <ChevronLeft className="w-4 h-4" />
               </CarouselPrevious>
 
               <CarouselNext
-                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -right-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                   }`}
               >
                 <ChevronRight className="w-4 h-4" />
@@ -578,8 +632,113 @@ export default function Page({ params }) {
       </section>
 
 
+      {/* -------------------- You Might Be Interested Section -------------------- */}
+      <section className="w-full bg-white py-12">
+        <div className="lg:px-6 xl:px-10 2xl:px-[24px]">
+          <h3 className="text-[15px] md:text-[18px] font-light font-kave-haffertext text-neutral-900">
+            You might be interested
+          </h3>
+          <p className="text-[12px] text-neutral-500 mb-8 leading-2">
+            Discover this selection of pieces chosen especially for you.
+          </p>
+
+          {/* Products All  */}
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            {relatedProducts.map((product) => (
+              <li key={product.id} className="group cursor-pointer">
+                <div className="relative bg-[#f9f7f4] overflow-hidden">
+                  <img
+                    src={product.imageNormal}
+                    alt={product.title}
+                    className="w-full h-auto object-contain transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                  {/* hover image */}
+                  <img
+                    src={product.imageHover}
+                    alt={`${product.title} alternate`}
+                    className="w-full h-auto object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <h4 className="text-[14px] font-medium text-neutral-900 font-kave-haffertext leading-snug">
+                    {product.title}
+                  </h4>
+                  <p className="text-[14px] text-neutral-600 leading-tight">
+                    {product.description}
+                  </p>
+                  <div className="mt-1 text-[14px] font-bold text-neutral-900">
+                    {product.price}
+                  </div>
+
+                  <div className="flex gap-1 mt-2">
+                    {product.colors.map((color, index) => (
+                      <span
+                        key={index}
+                        className="w-3 h-3 x"
+                        style={{ backgroundColor: color }}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+        </div>
+      </section>
 
 
+
+      <section className="w-full bg-white py-12">
+        <div className="flex flex-col items-center text-center mb-8">
+          <h2 className="text-[22px] md:text-[26px] font-light tracking-tight text-neutral-900 font-kave-haffertext">
+            Our stores
+          </h2>
+          <a
+            href="/en/en/stores/finder/"
+            title="Find yours"
+            aria-label="Find yours"
+            className="text-[14px] font-medium underline text-neutral-800 "
+          >
+            Find yours
+          </a>
+        </div>
+
+        {/* Carousel */}
+        <div className="relative mx-auto ">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full "
+          >
+            <CarouselContent className="">
+              {storeBanners.map((banner) => (
+                <CarouselItem
+                  key={banner.id}
+                  className="basis-[85%]  xl:basis-[31%] pl-1"
+                >
+                  <div className="overflow-hidden bg-[#f9f7f4] ">
+                    <img
+                      src={banner.image}
+                      alt="Store banner"
+                      className="w-full h-full object-cover transition-transform duration-500 ease-in-out aspect-[1.25/1]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            {/* Controls */}
+            <CarouselPrevious className="z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-3 -translate-y-1/2" />
+            <CarouselNext className="z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-3 -translate-y-1/2" />
+          </Carousel>
+        </div>
+      </section >
 
       {/* Spacer */}
       <div className="h-8" />

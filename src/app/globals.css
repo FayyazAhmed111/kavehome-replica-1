@@ -321,3 +321,7 @@ html.no-scroll {
 .shadow-gradient {
  background:  linear-gradient(0deg, transparent, var(--smokey-black));
 }
+
+.disabled\:opacity-50:disabled {
+    opacity: 0.4;
+}
