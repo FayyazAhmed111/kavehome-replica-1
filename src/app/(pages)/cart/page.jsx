@@ -104,9 +104,39 @@ export default function Cart() {
                 </div>
  
                 <div className="flex justify-between items-center mt-2">
-                  <select className="border border-gray-300 rounded-md p-1 text-sm">
-                    <option>1</option>
-                  </select>
+                    <div className="select-box w-[75px]  mb-0 text-[12px] ">
+                      <label
+                        htmlFor="select-quantity"
+                        className="flex flex-col  m-0 relative gap-2">
+                        <select
+                          id="select-quantity"
+                          aria-label="Select quantity"
+                          defaultValue="1"
+                          className=""
+
+                        >
+                          {Array.from({ length: 99 }, (_, i) => (
+                            <option key={i + 1} value={i + 1}>
+                              {i + 1}
+                            </option>
+                          ))}
+                        </select>
+
+                        <span className="pointer-events-none m-0 p-0 absolute right-3 bottom-2.5 ">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-black"
+                          >
+                            <path
+                              d="M6.35355 8.64645C6.15829 8.45118 5.84171 8.45118 5.64645 8.64645C5.45118 8.84171 5.45118 9.15829 5.64645 9.35355L6.35355 8.64645ZM12 15L11.6464 15.3536L12 15.7071L12.3536 15.3536L12 15ZM18.3536 9.35355C18.5488 9.15829 18.5488 8.84171 18.3536 8.64645C18.1583 8.45118 17.8417 8.45118 17.6464 8.64645L18.3536 9.35355ZM5.64645 9.35355L11.6464 15.3536L12.3536 14.6464L6.35355 8.64645L5.64645 9.35355ZM12.3536 15.3536L18.3536 9.35355L17.6464 8.64645L11.6464 14.6464L12.3536 15.3536Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
                   <span className="font-semibold text-gray-800">33.99 €</span>
                 </div>
               </div>

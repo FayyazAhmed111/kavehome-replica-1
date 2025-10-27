@@ -115,7 +115,7 @@ const Hero = ({ openSection, setOpenSection }) => {
         }, 3000);
     };
   return (
-    
+
           <section className="relative md:flex-row flex-col flex lg:gap-4 md:gap-4 gap-0">
             <nav
               aria-label="Breadcrumb"
@@ -129,7 +129,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                 <span>Sofas</span>
                 <span className="block">›</span>
               </a>
-    
+
               <a
                 href="/en/en/o/3-seater-sofas"
                 title="3 seater sofas"
@@ -143,11 +143,11 @@ const Hero = ({ openSection, setOpenSection }) => {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: "easeOut" }}
-              className="flex-[0_0_100%] max-w-full w-full relative 
-             md:flex-[0_0_50%] md:max-w-[50%] 
+        className="flex-[0_0_100%] max-w-full w-full relative
+             md:flex-[0_0_50%] md:max-w-[50%]
              xl:flex-[0_0_58.3333%] xl:max-w-[58.3333%]">
               <div>
-    
+
                 {/* Mobile Carousel */}
                 <div className="lg:hidden">
                   <Carousel
@@ -181,7 +181,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                   <div
                     className="detail-gallery_galleryImages__ulhTx flex w-full aspect-[0.8] flex-row overflow-x-auto overflow-y-hidden
                  touch-pan-x snap-x snap-mandatory scrollbar-none bg-[var(--kh-neutral-10)]
-                 md:flex-row md:flex-wrap md:gap-1 md:h-full md:justify-start md:overflow-y-hidden 
+                 md:flex-row md:flex-wrap md:gap-1 md:h-full md:justify-start md:overflow-y-hidden
                  md:snap-none md:bg-[var(--kh-neutral-00)] md:aspect-auto
                  md:[&>*:nth-child(5n+1)]:w-[calc(50%-4px)]
                  md:[&>*:nth-child(5n+2)]:w-[calc(50%-4px)]
@@ -211,8 +211,8 @@ const Hero = ({ openSection, setOpenSection }) => {
                     ))}
                   </div>
                 </div>
-    
-    
+
+
                 {/* View more images button */}
                 <div className="flex items-center justify-center mt-3">
                   <button className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-medium hover:border-neutral-400">
@@ -220,25 +220,25 @@ const Hero = ({ openSection, setOpenSection }) => {
                   </button>
                 </div>
               </div>
-    
+
             </motion.div>
-    
-    
+
+
             {/* Details Product */}
-            <div className="xl:my-12 xl:mx-auto xl:max-w-[512px] 
+      <div className="xl:my-12 xl:mx-auto xl:max-w-[512px]
             lg:max-w-[460px] md:max-w-[380px] p-4 md:p-0">
-    
+
               <div className="sticky top-6 space-y-2">
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-[#f0efeb] px-3 py-1 text-[12px] font-poppins  uppercase tracking-wide text-black">
                     NEW IN
                   </span>
                 </div>
-    
+
                 {/* Title */}
                 <div className="">
                   <div className="flex justify-between items-center">
-    
+
                     <h2 className="text-[46px] font-kave-haffertext font-normal">Veliro</h2>
                     <button>
                       <svg
@@ -257,15 +257,15 @@ const Hero = ({ openSection, setOpenSection }) => {
                           strokeLinejoin="round"
                         />
                       </svg>
-    
+
                     </button>
                   </div>
-    
+
                   <h1 className="text-[14px] font-poppins font-normal text-neutral-800 ">
                     Veliro green velvet 3-seater sofa with black steel legs 240cm FSC Mix Credit
                   </h1>
                 </div>
-    
+
                 {/* Price + finance */}
                 <div className="">
                   <div className="text-[27px] font-normal font-kave-haffertext">1,695 €</div>
@@ -274,7 +274,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                     <button className="ml-2 underline">More information</button>
                   </div> */}
                 </div>
-    
+
                 {/* Variant selector */}
                 <div className="selectors flex flex-col gap-5">
                   <div>
@@ -300,13 +300,13 @@ const Hero = ({ openSection, setOpenSection }) => {
                         </span>
                       </div>
                     </button> */}
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
                     <Drawer direction="right" className="">
                       {/* 🔹 Drawer Trigger */}
                       <DrawerTrigger asChild>
@@ -337,13 +337,13 @@ const Hero = ({ openSection, setOpenSection }) => {
                           </div>
                         </button>
                       </DrawerTrigger>
-    
+
                       {/* 🔹 Drawer Content */}
                       <DrawerContent className="right-0 top-0 z-[1000] fixed h-full min-w-[600px] max-w-[720px] w-full rounded-none border-l bg-white shadow-xl">
                         <DrawerHeader>
                           <DrawerTitle>Choose an option</DrawerTitle>
                         </DrawerHeader>
-    
+
                         <div className="p-4 flex flex-col gap-4">
                           {[
                             { title: "Veliro 2-seater sofa", subtitle: "2-seater sofa", size: "210 cm" },
@@ -362,11 +362,11 @@ const Hero = ({ openSection, setOpenSection }) => {
                             </button>
                           ))}
                         </div>
-    
+
                       </DrawerContent>
                     </Drawer>
                   </div>
-    
+
                   {/* Type */}
                   <div className="flex flex-row items-center justify-between gap-3 font-poppins text-[12px]">
                     <div className="flex items-center flex-row gap-1.5 grow-1 basis-[0%] shrink-1">
@@ -381,7 +381,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                     <button className="text-[12px] p-0 underline cursor-pointer text-neutral-60">64 options</button>
                   </div>
                 </div>
-    
+
                 {/* Materialsssssssssss */}
                 <div className="flex gap-2 overflow-x-auto pb-2">
                   {fabricOptions.map((f, i) => (
@@ -407,17 +407,17 @@ const Hero = ({ openSection, setOpenSection }) => {
                     </svg>
                   </button>
                 </div>
-    
+
                 {/* Fabric row */}
-    
-    
+
+
                 {/* Info alert */}
                 <div className="p-3 bg-blue-light text-blue-dark flex gap-3">
                   <span className="flex overflow-hidden align-middle">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.21697 1.7613C5.97181 1.88838 5.87608 2.19014 6.00316 2.43531C6.13024 2.68047 6.432 2.7762 6.67717 2.64912L6.21697 1.7613ZM10.3059 1.59182L10.2381 2.08721L10.2396 2.08741L10.3059 1.59182ZM12.4199 2.97939C12.6376 3.14923 12.9518 3.1104 13.1216 2.89266C13.2915 2.67492 13.2527 2.36073 13.0349 2.19089L12.4199 2.97939ZM0.645986 16.9027C0.450978 17.0982 0.451391 17.4148 0.646908 17.6098C0.842425 17.8048 1.15901 17.8044 1.35401 17.6089L0.645986 16.9027ZM11.8685 7.06692C12.0635 6.8714 12.0631 6.55482 11.8676 6.35981C11.6721 6.16481 11.3555 6.16522 11.1605 6.36074L11.8685 7.06692ZM12.5902 4.83722L12.9869 5.1416L12.9873 5.14104L12.5902 4.83722ZM15.4099 1.50937L15.7609 1.86551L15.7635 1.86293L15.4099 1.50937ZM14.9663 4.11998C14.7902 3.90732 14.475 3.87773 14.2623 4.05389C14.0497 4.23004 14.0201 4.54524 14.1962 4.7579L14.9663 4.11998ZM15.9271 8.05974L15.4274 8.04243L15.4273 8.0439L15.9271 8.05974ZM12.8602 14.0013L13.3425 14.1329L13.3426 14.1328L12.8602 14.0013ZM13.1165 16.5602L12.6771 16.7988L12.6773 16.7992L13.1165 16.5602ZM18.7514 19.5C19.0275 19.5 19.2514 19.2761 19.2514 19C19.2514 18.7238 19.0275 18.5 18.7514 18.5V19.5ZM6.67717 2.64912C7.58158 2.18032 8.93294 1.90865 10.2381 2.08721L10.3737 1.09644C8.86828 0.890488 7.30835 1.19559 6.21697 1.7613L6.67717 2.64912ZM10.2396 2.08741C11.0167 2.19129 11.8101 2.50376 12.4199 2.97939L13.0349 2.19089C12.2715 1.59539 11.3071 1.22123 10.3722 1.09623L10.2396 2.08741ZM1.35401 17.6089L11.8685 7.06692L11.1605 6.36074L0.645986 16.9027L1.35401 17.6089ZM13.2726 5.11718C12.8003 5.46624 12.3413 5.7916 11.9864 6.0089C11.8058 6.11947 11.6727 6.18921 11.5882 6.22254C11.5436 6.24019 11.5401 6.2364 11.5649 6.234C11.5753 6.233 11.7334 6.21665 11.8726 6.35586L11.1655 7.06297C11.3436 7.24109 11.5654 7.23861 11.6611 7.22937C11.7712 7.21872 11.8747 7.18457 11.9555 7.15266C12.1221 7.08686 12.3143 6.98065 12.5085 6.86177C12.9031 6.62018 13.3917 6.27265 13.867 5.92135L13.2726 5.11718ZM11.8726 6.35586C11.9858 6.46905 11.9918 6.59626 11.9912 6.63048C11.9906 6.66589 11.9834 6.67442 11.9942 6.64258C12.0149 6.58186 12.0659 6.47491 12.1596 6.31775C12.3429 6.01035 12.6353 5.59972 12.9869 5.1416L12.1935 4.53284C11.8355 4.99936 11.5145 5.44702 11.3007 5.80564C11.1959 5.9815 11.1024 6.1595 11.0477 6.31993C11.0209 6.39867 10.9932 6.50182 10.9914 6.61394C10.9895 6.72487 11.0134 6.91087 11.1655 7.06297L11.8726 6.35586ZM12.9873 5.14104C14.0226 3.7879 15.4672 2.15491 15.7609 1.8655L15.059 1.15325C14.7209 1.48638 13.2451 3.15834 12.1931 4.53339L12.9873 5.14104ZM15.7635 1.86293C16.0394 1.58705 16.2584 1.51102 16.3884 1.50122C16.5099 1.49205 16.5949 1.53537 16.6539 1.60356C16.77 1.73782 16.8678 2.12296 16.4434 2.54738L17.1505 3.25449C17.8658 2.53911 17.9384 1.56016 17.4103 0.949427C17.1471 0.645126 16.7552 0.470723 16.3132 0.504046C15.8797 0.536731 15.4488 0.763381 15.0564 1.15582L15.7635 1.86293ZM16.4434 2.54738C16.1261 2.86468 15.976 2.97006 15.3926 3.4547L16.0315 4.22394C16.5833 3.76562 16.7903 3.61466 17.1505 3.25449L16.4434 2.54738ZM14.1962 4.7579C15.1361 5.89256 15.4597 7.11016 15.4274 8.04243L16.4268 8.07704C16.4677 6.89451 16.0588 5.43885 14.9663 4.11998L14.1962 4.7579ZM15.4273 8.0439C15.3915 9.17354 14.8878 9.91603 14.2304 10.7436C13.5816 11.5602 12.7561 12.4818 12.3777 13.8698L13.3426 14.1328C13.6554 12.985 14.3222 12.2357 15.0134 11.3656C15.6961 10.5063 16.3802 9.54596 16.4268 8.07558L15.4273 8.0439ZM12.3778 13.8698C12.0844 14.9454 12.2102 15.9392 12.6771 16.7988L13.5559 16.3215C13.2172 15.698 13.1141 14.9706 13.3425 14.1329L12.3778 13.8698ZM12.6773 16.7992C13.9232 19.0886 16.6046 19.5 18.7514 19.5V18.5C16.6228 18.5 14.5069 18.0691 13.5557 16.3212L12.6773 16.7992Z" fill="#17388c"></path></svg>
                   </span>
-    
+
                   <div className="content flex flex-col flex-1 gap-1">
                     <span className="text-[12px] font-poppins font-semibold">Made exclusively for you</span>
                     <span className="content-dec font-normal font-poppins text-[12px]">
@@ -426,7 +426,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                     </span>
                   </div>
                 </div>
-    
+
                 {/* Delivery line */}
                 <div className="text[12px] min-h-[24px] my-3">
                   <div className=" inline-flex items-center gap-3 m-w-[600px] text-[12px] ">
@@ -439,14 +439,14 @@ const Hero = ({ openSection, setOpenSection }) => {
                     </div>
                   </div>
                 </div>
-    
-    
-    
+
+
+
                 {/* Bag Add */}
                 <div className="">
-    
+
                   <div className="flex md:gap-5 gap-2 flex-row">
-    
+
                     <div className="w-[85px] min-w-[85px] add-to-cart__container">
                       <div className="select-box w-full mb-0 text-[12px] ">
                         <label
@@ -457,7 +457,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                             aria-label="Select quantity"
                             defaultValue="1"
                             className=""
-    
+
                           >
                             {Array.from({ length: 99 }, (_, i) => (
                               <option key={i + 1} value={i + 1}>
@@ -465,7 +465,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                               </option>
                             ))}
                           </select>
-    
+
                           <span className="pointer-events-none m-0 p-0 absolute right-3 bottom-3.5 ">
                             <svg
                               viewBox="0 0 24 24"
@@ -482,14 +482,14 @@ const Hero = ({ openSection, setOpenSection }) => {
                         </label>
                       </div>
                     </div>
-    
+
                     {/* ADD TO BaG */}
                     <div className="flex-1  ">
                       {loading ? (
                         <button
                           disabled
-                          className="w-full bg-black  h-[48px] m-h-[48px] text-[16px] font-normal px-6 py-4 text-white 
-                         transition-colors hover:bg-neutral-800 
+                    className="w-full bg-black  h-[48px] m-h-[48px] text-[16px] font-normal px-6 py-4 text-white
+                         transition-colors hover:bg-neutral-800
                          disabled:cursor-not-allowed disabled:opacity-50"
                         >
                           <span className="flex items-center justify-center gap-2">
@@ -501,7 +501,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                         <button
                           onClick={handleClick}
                             className="bg-black w-full px-6 py-4 text-white cursor-pointer h-[48px] m-h-[48px] text-[16px] font-normal
-                           border-0  shadow-none relative leading-0.5 decoration-0 
+                           border-0  shadow-none relative leading-0.5 decoration-0
                          transition-colors hover:bg-neutral-800"
                           >
                           <span className="flex items-center justify-center text-center">
@@ -510,10 +510,10 @@ const Hero = ({ openSection, setOpenSection }) => {
                         </button>
                       )}
                     </div>
-    
+
                   </div>
                 </div>
-    
+
                 {/* Bulky item note */}
                 <div className="pt-4">
                   <div className=" text-black flex gap-[12px] bg-neutral-20 p-3">
@@ -533,7 +533,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                     </div>
                   </div>
                 </div>
-    
+
                 {/* Accordion links */}
                 <div className="xl:p-0 lg:py-0 lg:px-12 flex flex-col gap-4 mt-4 ">
                   <div className="flex flex-col gap-0 w-full">
@@ -545,7 +545,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                         <span>Product details</span>
                       </a>
                     </div>
-    
+
                     <div className="border-b border-neutral-20">
                       <button onClick={() => toggleSection("shipping")} className="cursor-pointer flex text-[12px] w-full items-center font-normal justify-between py-1.5  text-left text-neutral-900 ">
                         <span>Shipping & returns</span>
@@ -553,7 +553,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                           {openSection === "shipping" ? "−" : "+"}
                         </span>
                       </button>
-    
+
                       {openSection === "shipping" && (
                         <div className="mt-2 text-[12px] text-neutral-700 space-y-1">
                           <p>
@@ -578,7 +578,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                         </div>
                       )}
                     </div>
-    
+
                     <div className="border-b border-neutral-20">
                       <button onClick={() => toggleSection("product-care")} className="cursor-pointer flex text-[12px] w-full items-center  font-normal justify-between py-1.5 text-left text-neutral-900 ">
                         <span>Product care</span>
@@ -613,12 +613,12 @@ const Hero = ({ openSection, setOpenSection }) => {
                         </div>
                       )}
                     </div>
-    
+
                   </div>
                 </div>
                 <div className="text-right text-sm text-neutral-600">SKU: <strong>S81330ZF06</strong></div>
               </div>
-    
+
               {/* “Complete your look” — positioned under sticky info (right column) */}
               {/* <div className="mt-10">
                 <h3 className="mb-4 text-xl font-light">Complete your look</h3>
@@ -642,7 +642,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                 onMouseLeave={() => setIsHovered(false)}
               >
                 <h3 className="mb-4 text-xl font-light">Complete your look</h3>
-    
+
                 <Carousel
                   opts={{
                     align: "start",
@@ -667,7 +667,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                               className="h-full w-full object-contain"
                             />
                           </div>
-    
+
                           <div className="space-y-1 px-2">
                             <div className="text-sm font-semibold text-neutral-900">
                               {p.name.split(" ")[0]}
@@ -690,7 +690,7 @@ const Hero = ({ openSection, setOpenSection }) => {
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </CarouselPrevious>
-    
+
                   <CarouselNext
                     className={`z-10 border-0 bg-white/80 hover:bg-white text-neutral-800 shadow-sm rounded-full size-7
                       absolute top-1/2 -right-5 -translate-y-15 transition-opacity
@@ -702,9 +702,29 @@ const Hero = ({ openSection, setOpenSection }) => {
               </div>
             </div>
           </section>
-    
-     
+
+
   )
 }
 
-export default Hero
+export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

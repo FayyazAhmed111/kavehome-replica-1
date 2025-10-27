@@ -23,6 +23,9 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
         pathname.includes("/accounts/register") ||
         pathname.includes("/cart")
         || pathname.includes("/singleproduct")
+        || pathname.includes("/checkout")
+    if (pathname.includes("/checkout")) return null; 
+
 
     const [hidePromo, setHidePromo] = useState(false);
     const PROMO_SLIDES = [
