@@ -139,7 +139,7 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
 
 
                     <div className="mx-auto px-4 lg:px-10">
-                        <div className="h-18 flex items-center justify-between">
+                        <div className="md:h-18 h-16 flex items-center justify-between">
                             {/* Left group: hamburger + logo */}
                             <div className="flex  items-center gap-5">
                                 <button

@@ -240,7 +240,7 @@ export default function Page({ params }) {
 
   return (
     <main className=" md:mt-[113px] mt-[104px] grow-1 w-full">
-      {/* <div className="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden">
+      <div className="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden">
         {showScan && (
           <motion.div
             className="h-full w-1/3 bg-black"
@@ -248,7 +248,7 @@ export default function Page({ params }) {
             transition={{ repeat: Infinity, duration: 2.6, ease: "linear" }}
           />
         )}
-      </div> */}
+      </div>
       {/*------------- LAtesst hERO SECTION ----------------------*/}
       <Hero
         openSection={openSection}
@@ -262,7 +262,7 @@ export default function Page({ params }) {
           {/* <div className="flex-1 flex flex-col justify-center px-4 py-8 md:px-6 md:py-12 lg:px-8 lg:py-16 xl:px-10"> */}
 
           <div
-            className=" max-w-[50%]  
+            className=" md:max-w-[50%]  
     flex-1 flex flex-col justify-center
     px-4 py-8 md:px-[120px] md:pb-[72px]
     lg:px-[48px] lg:py-16
@@ -272,14 +272,12 @@ export default function Page({ params }) {
           >
 
             <div className="">
-              {/* Label */}
               <div className="text-[14px] font-normal font-poppins text-neutral-600  tracking-wide">Collection</div>
 
-              {/* Title */}
               <h2 className="text-4xl font-kave-haffertext md:text-5xl lg:text-[38px] font-light text-neutral-900">Veliro</h2>
 
               {/* Description */}
-              <p className="md:text-[14px] font-normal text-neutral-700  leading-5">A collection that pays homage to the iconic shapes of mid-20th century design, reinterpreted with contemporary proportions and a double seat that invites you to enjoy its comfort. Each piece is capable of transforming any environment with its elegant presence and versatility, becoming the perfect meeting point between classic and modern.</p>
+              <p className="md:text-[14px] text-[12px] font-normal text-neutral-700  leading-5">A collection that pays homage to the iconic shapes of mid-20th century design, reinterpreted with contemporary proportions and a double seat that invites you to enjoy its comfort. Each piece is capable of transforming any environment with its elegant presence and versatility, becoming the perfect meeting point between classic and modern.</p>
 
               {/* Products Carousel */}
               <div className="mt-4" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -310,14 +308,14 @@ export default function Page({ params }) {
                   </CarouselContent>
 
                   <CarouselPrevious
-                    className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -left-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                    className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -left-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                       }`}
                   >
                     <ChevronLeft className="w-4 h-4" />
                   </CarouselPrevious>
 
                   <CarouselNext
-                    className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -right-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                    className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -right-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                       }`}
                   >
                     <ChevronRight className="w-4 h-4" />
@@ -335,7 +333,7 @@ export default function Page({ params }) {
           </div>
 
           {/* Right Image */}
-          <div className="flex-1 max-w-[50%] overflow-hidden bg-neutral-100">
+          <div className="flex-1 md:max-w-[50%] overflow-hidden bg-neutral-100">
             <img
               src="https://d.media.kavehome.com/image/upload/w_1600,c_fill,ar_1.5,g_auto,f_auto/v1757402695/entities/collection-images/veliro_main.jpg"
               alt="Veliro collection hero"
@@ -517,14 +515,14 @@ export default function Page({ params }) {
 
             {/* Controls */}
             <CarouselPrevious
-              className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -left-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+              className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -left-4 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                 }`}
             >
               <ChevronLeft className="w-4 h-4" />
             </CarouselPrevious>
 
             <CarouselNext
-              className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -right-5 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+              className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 -right-4 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                 }`}
             >
               <ChevronRight className="w-4 h-4" />
@@ -614,14 +612,14 @@ export default function Page({ params }) {
 
               {/* Controls */}
               <CarouselPrevious
-                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                   }`}
               >
                 <ChevronLeft className="w-4 h-4" />
               </CarouselPrevious>
 
               <CarouselNext
-                className={`z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
+                className={`z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-1 -translate-y-1/2 transition-opacity ${isHovered ? "opacity-100" : "opacity-0"
                   }`}
               >
                 <ChevronRight className="w-4 h-4" />
@@ -689,7 +687,7 @@ export default function Page({ params }) {
       </section>
 
 
-
+      {/* BANNERRR SLIDERRRRRRR */}
       <section className="w-full bg-white py-12">
         <div className="flex flex-col items-center text-center mb-8">
           <h2 className="text-[22px] md:text-[26px] font-light tracking-tight text-neutral-900 font-kave-haffertext">
@@ -718,7 +716,7 @@ export default function Page({ params }) {
               {storeBanners.map((banner) => (
                 <CarouselItem
                   key={banner.id}
-                  className="basis-[85%]  xl:basis-[31%] pl-1"
+                  className="basis-[92%] xl:basis-[31%] pl-1"
                 >
                   <div className="overflow-hidden bg-[#f9f7f4] ">
                     <img
@@ -734,8 +732,8 @@ export default function Page({ params }) {
             </CarouselContent>
 
             {/* Controls */}
-            <CarouselPrevious className="z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-3 -translate-y-1/2" />
-            <CarouselNext className="z-10 border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-3 -translate-y-1/2" />
+            <CarouselPrevious className="z-10 hidden md:flex border border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 left-3 -translate-y-1/2" />
+            <CarouselNext className="z-10 border hidden md:flex border-neutral-300 bg-white hover:bg-neutral-50 text-neutral-800 shadow-sm rounded-full size-8 absolute top-1/2 right-3 -translate-y-1/2" />
           </Carousel>
         </div>
       </section >
