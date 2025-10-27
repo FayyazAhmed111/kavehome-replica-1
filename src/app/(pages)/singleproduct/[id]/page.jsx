@@ -19,6 +19,7 @@ import {
   DrawerTrigger,
 } from "../../../../components/ui/drawer";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 export default function Page({ params }) {
 
   const productSections = [
@@ -240,7 +241,7 @@ export default function Page({ params }) {
 
   return (
     <main className=" md:mt-[113px] mt-[104px] grow-1 w-full">
-      <div className="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden">
+      {/* <div className="fixed inset-x-0 top-0 z-50 h-0.5 overflow-hidden">
         {showScan && (
           <motion.div
             className="h-full w-1/3 bg-black"
@@ -248,7 +249,7 @@ export default function Page({ params }) {
             transition={{ repeat: Infinity, duration: 2.6, ease: "linear" }}
           />
         )}
-      </div>
+      </div> */}
       {/*------------- LAtesst hERO SECTION ----------------------*/}
       <Hero
         openSection={openSection}

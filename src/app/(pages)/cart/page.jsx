@@ -1,4 +1,12 @@
+"use client"
+import { useState } from 'react';
+import Heart from './../../../components/icons/Heart';
+import { IoChevronUp, IoChevronDown } from "react-icons/io5";
+import Link from 'next/link';
+
 export default function Cart() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <main className="w-full mx-auto px-4 mt-24 mb-12">
       <div className="px-4 pt-12">
@@ -56,7 +64,6 @@ export default function Cart() {
           {/* Product Card */}
           <div className="border-b border-gray-200 py-6 flex flex-col gap-4">
               <div className="flex gap-6">
- 
               {/* Image */}
               <div className="w-24 h-32 bg-gray-100 flex-shrink-0">
                 <img
@@ -67,11 +74,33 @@ export default function Cart() {
               </div>
  
               <div className="flex flex-col justify-between flex-1">
-                <div>
-                    <h3 className="font-semibold font-poppins text-gray-800 text-[12px] md:text-[14px] ">
-                    Set of 3 Nadua hangers in solid wood with a natural, green beech finish.
-                  </h3>
-                    <p className="text-gray-500 text-[12px] font-poppins mt-1">AA6229M19</p>
+                  <div>
+                    <h3 className="flex justify-between items-center font-semibold font-poppins text-gray-800 text-[12px] md:text-[14px] ">
+                      Set of 3 Nadua hangers in solid wood with a natural, green beech finish.
+                      <span>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-4.5 h-4.5"
+                        >
+                          <path
+                            d="M3 5.49H21M5.65 5.49V20.99C5.65 20.99 6.05 20.99 6.55 20.99H17.45C17.95 20.99 18.35 20.99 18.35 20.99V5.49M15.18 5.49V3.9C15.18 3.4 14.78 3 14.28 3H9.72C9.22 3 8.82 3.4 8.82 3.9V5.49M9.56 9.06V17.44M14.44 9.06V17.44"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+
+                      </span>
+                    </h3>
+
+
+                    <p className="flex justify-between items-center  text-gray-500 text-[12px] font-poppins mt-1">AA6229M19
+                      <span>
+                        <Heart className="w-4.5 h-4.5"
+                        />
+                      </span>
+                    </p>
                 </div>
  
                 <div className="flex justify-between items-center mt-2">
@@ -87,11 +116,12 @@ export default function Cart() {
  
           {/* Summary Section */}
           <div className="flex flex-col ">
-            <div className="flex flex-col p-6 gap-6 justify-between md:w-[360px] w-[300px] bg-neutral-10 ">
+            <div className="flex flex-col p-6 gap-6 justify-between 2xl:w-[360px] lg:w-[300px]  bg-neutral-10 ">
               <div className="border-b border-neutral-30 pb-6 items-end flex flex-col">
-                <button className="w-fit flex gap-1 items-center text-[14px] font-kave-haffertext font-normal relative p-0 outline-0 ">
+                <button onClick={() => setIsOpen(!isOpen)}
+                  className="w-fit flex gap-1 items-center text-[14px] font-kave-haffertext font-normal relative p-0 outline-0 ">
                   Apply discount code
-                  <span>
+                  {/* <span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -103,9 +133,33 @@ export default function Cart() {
                         fill="currentColor"
                       />
                     </svg>
- 
+
+                  </span> */}
+                  <span >
+                    {isOpen ? (
+                      <IoChevronUp size={20} />
+                    ) : (
+                      <IoChevronDown size={20} />
+                    )}
                   </span>
                 </button>
+                {/* Dropdown content */}
+                {isOpen && (
+                  <div className="w-full max-w-[480px] gap-2 flex items-start justify-end mt-2 ">
+                    <div className='flex-1 flex flex-col font-normal gap-0.5'>
+                      <div className='flex bg-white items-center gap-1 h-[32px] justify-between relative outline-1 outline-neutral-50 focus:border-1 focus:border-black'>
+                        <input
+                          type="text"
+                          placeholder="Enter code"
+                          className="border-0 flex-1 h-[18px] text-[12px] text-neutral-80 w-full border-gray-400 px-2 py-1 text-sm focus:outline-none"
+                        />
+                      </div>
+                    </div>
+                    <button className="cursor-pointer bg-black text-white h-[32px] w-[104px] m-0 text-[12px] min-h-[32px] px-4 py-0.5 ">
+                      Apply
+                    </button>
+                  </div>
+                )}
               </div>
  
               <div className="flex p-2 flex-col gap-2">
@@ -114,26 +168,27 @@ export default function Cart() {
               <span>--</span>
             </div>
             <div className="flex justify-between text-lg font-semibold">
-                  <div className="text-[12px]">
-                    Total <span className="text-[12px] text-gray-500">(Taxes included)</span>
+                  <div className="text-[14px]">
+                    Total
+                    <div className="text-[12px] font-normal text-neutral-60">Tax included</div>
               </div>
-              <span>33.99 €</span>
+                  <span className='text-[16px]'>33.99 €</span>
             </div>
           </div>
  
-          <button className="bg-black text-white py-3 rounded-md w-full font-medium hover:bg-gray-900">
+              <Link href="/checkout" className="bg-black flex items-center justify-center cursor-pointer text-[16px] mx-auto  font-kave-haffertext text-white py-2.5 px-6  mb-2 w-full font-normal leading-[28px] hover:bg-gray-900">
             Continue to checkout
-          </button>
+              </Link>
  
-          <a href="#" className="text-center underline text-gray-700 hover:text-black">
+              <Link href="/" className="text-center flex items-center text-[14px] font-kave-haffertext justify-center w-full font-normal leading-[0.5px]  underline text-gray-700 hover:text-black">
             Continue shopping
-              </a>
+              </Link>
  
             </div>
  
             <div className="border-t pt-4 text-center md:w-[360px] w-[300px] font-kave-haffertext">
-              <h4 className="font-medium  text-[12px]">PAYMENT 100% SECURE AND EASY</h4>
-              <p className="text-[12px] text-gray-500 mt-1">
+              <h4 className="font-medium  text-[12px] tracking-wide mb-1 ">PAYMENT 100% SECURE AND EASY</h4>
+              <p className="text-[12px] font-normal text-gray-500 mt-1 tracking-wider">
                 Your payment will be processed through a connection protected by an SSL certificate.
               </p>
  
