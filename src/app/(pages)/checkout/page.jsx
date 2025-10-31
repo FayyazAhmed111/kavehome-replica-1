@@ -971,7 +971,7 @@ export default function CheckoutPage() {
   const cartItems = [
     {
       id: 1,
-      name: "Laira 3-seater sofa bed with chaise",
+      name: "3-seater sofa bed with chaise",
       sku: "S00037LG39",
       price: "2,035 €",
       units: 1,
@@ -1026,7 +1026,7 @@ export default function CheckoutPage() {
 
               {/* Image */}
               <div className="col-span-4 md:col-span-2">
-                <img src={item.image} alt={item.name} className="w-20 h-24 object-cover rounded-md" />
+                <img src={item.image} alt={item.name} className="max-w-[140px] object-cover rounded-md" />
               </div>
 
               {/* Product Info */}
@@ -1321,7 +1321,7 @@ export default function CheckoutPage() {
               Your payment will be securely processed.
             </p>
             {/* Place Order */}
-            <button className="w-full py-3 bg-black text-white rounded text-sm font-semibold uppercase tracking-wide hover:bg-neutral-800">
+            <button className="w-full cursor-pointer py-3 bg-black text-white rounded text-sm font-semibold uppercase tracking-wide hover:bg-neutral-800">
               Pay & Place Order
             </button>
           </div>
