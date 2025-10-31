@@ -192,6 +192,9 @@ html.no-scroll {
   outline: none;
 }
 
+input[type="radio"] {
+  @apply accent-black;
+}
 
 
 /* @media (prefers-color-scheme: dark) {

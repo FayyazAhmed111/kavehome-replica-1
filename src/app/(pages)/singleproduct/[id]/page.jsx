@@ -37,6 +37,7 @@ export default function Page({ params }) {
       <p>The steel legs, with an elegant matte, micro-textured, black powder-coated finish, add stability and a contemporary touch to the piece.
       Produced in Spain, this sofa blends easily into any space thanks to its balanced design and comfortable seat.</p>
       `,
+
     },
     {
       id: "package",

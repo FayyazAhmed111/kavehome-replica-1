@@ -27,10 +27,12 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
     if (pathname.includes("/checkout")) return null; 
 
 
+
     const [hidePromo, setHidePromo] = useState(false);
     const PROMO_SLIDES = [
         { textLeft: "Here to Stay |", textRight: "Discover", href: "/s/selected-collection" },
         { textLeft: "Selected Collection |", textRight: "Discover", href: "/s/selected-collection" },
+
     ];
 
     const PRIMARY_LINKS = [
