@@ -1252,7 +1252,7 @@ export default function CheckoutPage() {
 
         {/* PAYMENT */}
         <div className="grid grid-cols-12 gap-10">
-          <div className="space-y-6 md:col-span-6 col-span-12 order-2 border-b pb-8">
+          <div className="space-y-6 md:col-span-6 col-span-12 md:order-first order-2 border-b pb-8">
             <div className="flex justify-between items-center">
               <h2 className="text-lg font-semibold text-neutral-900">Payment</h2>
               <p className="text-[11px] uppercase text-neutral-600">Secure encrypted</p>
