@@ -22,7 +22,8 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
         pathname.includes("/accounts/login") ||
         pathname.includes("/accounts/register") ||
         pathname.includes("/cart")
-        || pathname.includes("/singleproduct")
+        || pathname.includes("/singleproduct") ||
+        pathname.includes("/wishlists")
         || pathname.includes("/checkout")
     if (pathname.includes("/checkout")) return null; 
 
@@ -87,7 +88,7 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
     };
     return (
 
-        <div className="">
+        <div className="relative z-40">
             {/* TOP PROMO STRIP */}
             <AnimatePresence initial={false}>
                 {!hidePromo && (

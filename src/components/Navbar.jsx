@@ -40,7 +40,7 @@ export default function KaveHomeHeaderReplica() {
   };
 
   return (
-    <div className="relative z-[60]">
+    <div className="relative ">
 
       <Header
         setDrawerOpen={setDrawerOpen}

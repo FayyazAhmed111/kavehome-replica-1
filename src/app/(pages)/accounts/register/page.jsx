@@ -42,7 +42,6 @@ export default function HomeRegisterPage() {
       "
     >
       <div className="w-[360px] md:py-[72px] text-center ">
-        {/* Title */}
         <h1 className="text-[22px] md:text-[27px] leading-[1.2] font-normal font-kave-haffertext text-neutral-100 text-center">
           Create your account
         </h1>
@@ -51,7 +50,7 @@ export default function HomeRegisterPage() {
         </p>
  
         {/* Google Button */}
-        <button
+        {/* <button
           type="button"
           className="
 w-full
@@ -68,7 +67,7 @@ w-full
               h-[48px]
               hover:bg-[#f9f9f9]
               transition
-              cursor-pointer  
+              cursor-pointer
               mt-6        "
         >
           <img
@@ -77,7 +76,7 @@ w-full
             className="w-4.5 h-4.5"
           />
           Continue with Google
-        </button>
+        </button> */}
  
         {/* Divider */}
         <div className="flex items-center gap-4 my-6">
