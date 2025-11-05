@@ -14,577 +14,336 @@ export const NAV_JSON = {
     columns: [
       {
         title: "Sofas",
-        seeAll: "/en/en/o/sofas",
+        seeAll: "/products/sofas",
         items: [
-          { label: "Sofas", href: "/sofas" },
+          { label: "Sofas", href: "/products/sofas" },
           {
             label: "Corner sofas & chaise longues",
-            href: "/corner-sofas-chaise-longues",
+            href: "/products/sofas/corner-sofas",
           },
-          { label: "Modular sofas", href: "/en/en/o/modular-sofas" },
-          { label: "Sofa beds", href: "/en/en/o/sofa-beds-and-daybeds" },
+          { label: "Modular sofas", href: "/products/sofas/modular-sofas" },
+          { label: "Sofa beds", href: "/products/sofas/sofa-beds" },
           {
-            label: "Armchairs and rocking chairs",
-            href: "/en/en/o/armchairs-rocking-chairs",
+            label: "Armchairs & rocking chairs",
+            href: "/products/sofas/armchairs",
           },
           {
-            label: "Indoor and outdoor sofas",
-            href: "/en/en/o/indoor-and-outdoor-sofas",
+            label: "Indoor & outdoor sofas",
+            href: "/products/sofas/indoor-outdoor-sofas",
           },
-          { label: "Pouffes and footstools", href: "/en/en/o/poufs-footrests" },
-          { label: "All sofa collections", href: "/en/en/e/sofas-collections" },
-          { label: "Customisation", href: "/en/en/customized" },
-          { label: "Material samples", href: "/en/en/material-samples" },
-          {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
-          },
+          { label: "Pouffes & footstools", href: "/products/sofas/pouffes" },
+          { label: "Sofa collections", href: "/products/sofas/collections" },
+          { label: "Customisation", href: "/products/sofas/customisation" },
+          { label: "Material samples", href: "/products/materials" },
+          { label: "Cleaning & maintenance", href: "/products/care" },
         ],
       },
+
       {
         title: "Chairs",
-        seeAll: "/en/en/o/chairs",
+        seeAll: "/products/chairs",
         items: [
-          { label: "Chairs", href: "/en/en/o/chairs" },
-          { label: "Dining chairs", href: "/en/en/o/dining-chairs" },
-          { label: "Kitchen chairs", href: "/en/en/o/kitchen-chairs" },
-          { label: "Desk chairs", href: "/en/en/o/desk-chairs" },
-          { label: "Stools", href: "/en/en/o/bar-stools-chairs" },
-          { label: "Benches", href: "/en/en/o/benches" },
+          { label: "Chairs", href: "/products/chairs" },
+          { label: "Dining chairs", href: "/products/chairs/dining-chairs" },
+          { label: "Kitchen chairs", href: "/products/chairs/kitchen-chairs" },
+          { label: "Desk chairs", href: "/products/chairs/desk-chairs" },
+          { label: "Stools", href: "/products/chairs/stools" },
+          { label: "Benches", href: "/products/chairs/benches" },
           {
-            label: "Indoor and outdoor chairs",
-            href: "/en/en/o/indoor-and-outdoor-chairs",
+            label: "Indoor & outdoor chairs",
+            href: "/products/chairs/indoor-outdoor-chairs",
           },
           {
-            label: "Shop the look · Chairs and tables",
-            href: "/en/en/s/shop-the-look-chairs-tables",
+            label: "Shop the look: chairs & tables",
+            href: "/products/chairs/shop-the-look",
           },
-          {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
-          },
+          { label: "Cleaning & maintenance", href: "/products/care" },
         ],
       },
+
       {
         title: "Tables",
-        seeAll: "/en/en/o/tables",
+        seeAll: "/products/tables",
         items: [
-          { label: "Tables", href: "/en/en/o/tables" },
-          { label: "Dining tables", href: "/en/en/o/dining-tables" },
-          { label: "Kitchen tables", href: "/en/en/o/kitchen-tables" },
-          { label: "Extendable tables", href: "/en/en/o/extendable-tables" },
-          { label: "Round tables", href: "/en/en/o/round-tables" },
-          { label: "Bar tables", href: "/en/en/o/bar-tables" },
-          { label: "Coffee tables", href: "/en/en/o/coffee-tables" },
-          { label: "Side tables", href: "/en/en/o/side-tables" },
+          { label: "Tables", href: "/products/tables" },
+          { label: "Dining tables", href: "/products/tables/dining-tables" },
+          { label: "Kitchen tables", href: "/products/tables/kitchen-tables" },
           {
-            label: "Indoor and outdoor tables",
-            href: "/en/en/o/indoor-and-outdoor-tables",
+            label: "Extendable tables",
+            href: "/products/tables/extendable-tables",
           },
-          { label: "Desks", href: "/en/en/o/desks" },
+          { label: "Round tables", href: "/products/tables/round-tables" },
+          { label: "Bar tables", href: "/products/tables/bar-tables" },
+          { label: "Coffee tables", href: "/products/tables/coffee-tables" },
+          { label: "Side tables", href: "/products/tables/side-tables" },
           {
-            label: "Shop the look · Tables and chairs",
-            href: "/en/en/s/shop-the-look-chairs-tables",
+            label: "Indoor & outdoor tables",
+            href: "/products/tables/indoor-outdoor-tables",
           },
+          { label: "Desks", href: "/products/tables/desks" },
           {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
+            label: "Shop the look: tables & chairs",
+            href: "/products/tables/shop-the-look",
           },
+          { label: "Cleaning & maintenance", href: "/products/care" },
         ],
       },
+
       {
         title: "Furniture",
-        seeAll: "/en/en/o/storage-units",
+        seeAll: "/products/furniture",
         items: [
-          { label: "Sideboards", href: "/en/en/o/sideboards" },
-          { label: "TV Stands", href: "/en/en/o/tv-stands" },
-          { label: "Bookcases and cabinets", href: "/en/en/o/bookcases" },
-          { label: "Chests of drawers", href: "/en/en/o/chests-drawers" },
-          { label: "Bedside tables", href: "/en/en/o/bedside-tables" },
-          { label: "Coat racks", href: "/en/en/o/coat-racks" },
-          { label: "Console tables", href: "/en/en/o/console-tables" },
-          { label: "Shoe racks", href: "/en/en/o/shoe-racks" },
-          { label: "Shelves", href: "/en/en/o/shelves" },
-          { label: "Hangers", href: "/en/en/o/hangers" },
-          { label: "Bathroom furniture", href: "/en/en/o/bathroom-furniture" },
+          { label: "Sideboards", href: "/products/furniture/sideboards" },
+          { label: "TV stands", href: "/products/furniture/tv-stands" },
           {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
+            label: "Bookcases & cabinets",
+            href: "/products/furniture/bookcases",
           },
+          {
+            label: "Chests of drawers",
+            href: "/products/furniture/chests-of-drawers",
+          },
+          {
+            label: "Bedside tables",
+            href: "/products/furniture/bedside-tables",
+          },
+          { label: "Coat racks", href: "/products/furniture/coat-racks" },
+          {
+            label: "Console tables",
+            href: "/products/furniture/console-tables",
+          },
+          { label: "Shoe racks", href: "/products/furniture/shoe-racks" },
+          { label: "Shelves", href: "/products/furniture/shelves" },
+          { label: "Hangers", href: "/products/furniture/hangers" },
+          {
+            label: "Bathroom furniture",
+            href: "/products/furniture/bathroom-furniture",
+          },
+          { label: "Cleaning & maintenance", href: "/products/care" },
         ],
       },
+
       {
         title: "Outdoor",
-        seeAll: "/en/en/outdoor-furniture",
+        seeAll: "/products/outdoor",
         items: [
-          { label: "Garden chairs", href: "/en/en/o/garden-chairs" },
-          { label: "Garden tables", href: "/en/en/o/garden-tables" },
-          { label: "Garden sofas", href: "/en/en/o/garden-sofas" },
+          { label: "Garden chairs", href: "/products/outdoor/garden-chairs" },
+          { label: "Garden tables", href: "/products/outdoor/garden-tables" },
+          { label: "Garden sofas", href: "/products/outdoor/garden-sofas" },
           {
-            label: "Garden armchairs and pouffes",
-            href: "/en/en/o/garden-armchairs-pouffes",
+            label: "Garden armchairs & pouffes",
+            href: "/products/outdoor/garden-armchairs",
           },
-          { label: "Garden sets", href: "/en/en/o/garden-sets" },
+          { label: "Garden sets", href: "/products/outdoor/garden-sets" },
           {
-            label: "Outdoor stools and benches",
-            href: "/en/en/o/outdoor-stools-benches",
+            label: "Outdoor stools & benches",
+            href: "/products/outdoor/stools",
           },
           {
-            label: "Loungers and Deck chairs",
-            href: "/en/en/o/sun-loungers-deck-chairs",
+            label: "Loungers & deck chairs",
+            href: "/products/outdoor/sun-loungers",
           },
-          { label: "Hanging chairs", href: "/en/en/o/hanging-chairs" },
-          { label: "Outdoor Lighting", href: "/en/en/o/outdoor-lighting" },
+          { label: "Hanging chairs", href: "/products/outdoor/hanging-chairs" },
           {
-            label: "Outdoor rugs and cushions",
-            href: "/en/en/o/rugs-cushions-accessories",
+            label: "Outdoor lighting",
+            href: "/products/outdoor/outdoor-lighting",
           },
-          { label: "Outdoor Decor", href: "/en/en/o/outdoor-accessories" },
           {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
+            label: "Outdoor rugs & cushions",
+            href: "/products/outdoor/textiles",
           },
-          { label: "Care guide", href: "/en/en/e/materials-care" },
-          { label: "Shop the Look", href: "/en/en/e/shop-the-look-outdoor" },
+          { label: "Outdoor decor", href: "/products/outdoor/decor" },
+          { label: "Cleaning & maintenance", href: "/products/care" },
+          { label: "Care guide", href: "/products/materials-care" },
+          { label: "Shop the look", href: "/products/outdoor/shop-the-look" },
         ],
       },
+
       {
         title: "Decoration",
-        seeAll: "/en/en/o/decoration-accessories",
+        seeAll: "/products/decoration",
         items: [
-          { label: "Wall decor", href: "/en/en/o/wall-decor" },
-          { label: "Mirrors", href: "/en/en/o/mirrors" },
+          { label: "Wall decor", href: "/products/decoration/wall-decor" },
+          { label: "Mirrors", href: "/products/decoration/mirrors" },
+          { label: "Accessories", href: "/products/decoration/accessories" },
+          { label: "Vases", href: "/products/decoration/vases" },
+          { label: "Plants & pots", href: "/products/decoration/plants-pots" },
+          { label: "Fragrances", href: "/products/decoration/fragrances" },
           {
-            label: "Decoration and accessories",
-            href: "/en/en/o/accessories-deco",
+            label: "Children's decor",
+            href: "/products/decoration/childrens-decor",
           },
-          { label: "Vases", href: "/en/en/o/vases" },
-          { label: "Plants & Pots", href: "/en/en/o/plants-pots" },
-          {
-            label: "Air fresheners and fragrances",
-            href: "/en/en/o/air-fresheners-and-fragrances",
-          },
-          { label: "Childrens decor", href: "/en/en/o/childrens-decor" },
         ],
       },
+
       {
         title: "Soft furnishings",
-        seeAll: "/en/en/o/soft-furnishings",
+        seeAll: "/products/textiles",
         items: [
-          { label: "Rugs", href: "/en/en/o/rugs" },
+          { label: "Rugs", href: "/products/textiles/rugs" },
+          { label: "Cushions & covers", href: "/products/textiles/cushions" },
+          { label: "Blankets & throws", href: "/products/textiles/throws" },
+          { label: "Curtains", href: "/products/textiles/curtains" },
+          { label: "Bed linen", href: "/products/textiles/bed-linen" },
+          { label: "Table linens", href: "/products/textiles/table-linens" },
+          { label: "Towels", href: "/products/textiles/towels" },
           {
-            label: "Cushions & cushion covers",
-            href: "/en/en/o/cushions-cushion-covers",
+            label: "Chair cushions",
+            href: "/products/textiles/chair-cushions",
           },
-          {
-            label: "Blankets and throws",
-            href: "/en/en/o/throws-blankets-plaids",
-          },
-          { label: "Curtains", href: "/en/en/o/curtains" },
-          { label: "Bedlinen", href: "/en/en/o/bedlinen" },
-          {
-            label: "Table Linens",
-            href: "/en/en/o/table-cloths-napkins-runners",
-          },
-          { label: "Towels", href: "/en/en/o/towels" },
-          { label: "Chair cushions", href: "/en/en/o/chair-cushions" },
         ],
       },
+
       {
         title: "Lighting",
-        seeAll: "/en/en/o/lighting",
+        seeAll: "/products/lighting",
         items: [
-          { label: "Lamp shades", href: "/en/en/o/lamp-shades" },
-          { label: "Floor lamps", href: "/en/en/o/floor-lamps" },
-          { label: "Table lamps", href: "/en/en/o/table-lamps" },
-          { label: "Wall lamps", href: "/en/en/o/wall-lamps" },
+          { label: "Lamp shades", href: "/products/lighting/lamp-shades" },
+          { label: "Floor lamps", href: "/products/lighting/floor-lamps" },
+          { label: "Table lamps", href: "/products/lighting/table-lamps" },
+          { label: "Wall lamps", href: "/products/lighting/wall-lamps" },
           {
-            label: "Light shades and accessories",
-            href: "/en/en/o/light-shades-and-accessories",
+            label: "Light accessories",
+            href: "/products/lighting/light-accessories",
           },
-          { label: "Work lamps", href: "/en/en/o/desk-lamps" },
-          {
-            label: "Bedside table lamps",
-            href: "/en/en/o/bedisde-table-lamps",
-          },
-          { label: "Outdoor Lighting", href: "/en/en/o/outdoor-lighting" },
-          { label: "Portable lamps", href: "/en/en/o/portable-lamps" },
-          { label: "Light bulbs", href: "/en/en/o/light-bulbs" },
-          { label: "Nexia & Kave Home", href: "/en/en/s/nexia" },
+          { label: "Desk lamps", href: "/products/lighting/desk-lamps" },
+          { label: "Bedside lamps", href: "/products/lighting/bedside-lamps" },
+          { label: "Outdoor lighting", href: "/products/lighting/outdoor" },
+          { label: "Portable lamps", href: "/products/lighting/portable" },
+          { label: "Light bulbs", href: "/products/lighting/light-bulbs" },
         ],
       },
+
       {
         title: "Bedroom furniture",
-        seeAll: "/en/en/o/bedroom",
+        seeAll: "/products/bedroom",
         items: [
-          { label: "Beds", href: "/en/en/o/beds" },
-          { label: "Mattresses", href: "/en/en/mattresses2" },
-          { label: "Headboards", href: "/en/en/o/headboards" },
-          { label: "Bedside tables", href: "/en/en/bedside-tables" },
-          { label: "Pillows", href: "/en/en/o/bed-pillows" },
-          { label: "Quilts and duvets", href: "/en/en/o/quilts-duvets" },
-          { label: "Bedlinen", href: "/en/en/o/bedlinen" },
-          { label: "Chests of drawers", href: "/en/en/o/chests-drawers" },
-          { label: "Benches", href: "/en/en/o/benches" },
+          { label: "Beds", href: "/products/bedroom/beds" },
+          { label: "Mattresses", href: "/products/bedroom/mattresses" },
+          { label: "Headboards", href: "/products/bedroom/headboards" },
+          { label: "Bedside tables", href: "/products/bedroom/bedside-tables" },
+          { label: "Pillows", href: "/products/bedroom/pillows" },
+          { label: "Quilts & duvets", href: "/products/bedroom/quilts-duvets" },
+          { label: "Bed linen", href: "/products/bedroom/bed-linen" },
           {
-            label: "Cleaning and maintenance",
-            href: "/en/en/o/cleaning-maintenance",
+            label: "Chests of drawers",
+            href: "/products/bedroom/chests-of-drawers",
           },
+          { label: "Benches", href: "/products/bedroom/benches" },
+          { label: "Cleaning & maintenance", href: "/products/care" },
         ],
       },
+
       {
         title: "Bathroom",
-        seeAll: "/en/en/o/bathroom",
+        seeAll: "/products/bathroom",
         items: [
-          { label: "Bathroom furniture", href: "/en/en/o/bathroom-furniture" },
+          { label: "Bathroom furniture", href: "/products/bathroom/furniture" },
+          { label: "Accessories", href: "/products/bathroom/accessories" },
+          { label: "Towels", href: "/products/bathroom/towels" },
+          { label: "Bath mats", href: "/products/bathroom/bath-mats" },
+          { label: "Organization", href: "/products/bathroom/organization" },
           {
-            label: "Bathroom accessories",
-            href: "/en/en/o/bathroom-accessories",
+            label: "Laundry baskets",
+            href: "/products/bathroom/laundry-baskets",
           },
-          { label: "Towels", href: "/en/en/o/towels" },
-          { label: "Bath mats", href: "/en/en/o/bath-mats" },
-          {
-            label: "Bathroom organization",
-            href: "/en/en/o/bathroom-organization",
-          },
-          { label: "Laundry baskets", href: "/en/en/o/laundry-baskets" },
-          { label: "Bathroom mirrors", href: "/en/en/o/bathroom-mirrors" },
-          { label: "Bathroom lamps", href: "/en/en/o/bathroom-lamps" },
+          { label: "Mirrors", href: "/products/bathroom/mirrors" },
+          { label: "Bathroom lamps", href: "/products/bathroom/lamps" },
         ],
       },
+
       {
         title: "Kitchen",
-        seeAll: "/en/en/kitchen",
+        seeAll: "/products/kitchen",
         items: [
-          { label: "Chopping boards", href: "/en/en/o/chopping-boards" },
           {
-            label: "Table cloths, napkin & runners",
-            href: "/en/en/o/table-cloths-napkins-runners",
+            label: "Chopping boards",
+            href: "/products/kitchen/chopping-boards",
           },
-          { label: "Cups, bowls & mugs", href: "/en/en/o/cups-bowls-mugs" },
-          { label: "Trays", href: "/en/en/o/trays" },
-          { label: "Dinnerware sets", href: "/en/en/o/dinnerware-sets" },
-          { label: "Glassware", href: "/en/en/o/glassware" },
-          { label: "Bottles and jars", href: "/en/en/o/bottles-and-jars" },
-          { label: "Cutlery", href: "/en/en/o/cutlery" },
-          { label: "Accessories", href: "/en/en/o/accessories-kitchen-b" },
+          { label: "Table linens", href: "/products/kitchen/table-linens" },
+          {
+            label: "Cups, bowls & mugs",
+            href: "/products/kitchen/cups-bowls-mugs",
+          },
+          { label: "Trays", href: "/products/kitchen/trays" },
+          {
+            label: "Dinnerware sets",
+            href: "/products/kitchen/dinnerware-sets",
+          },
+          { label: "Glassware", href: "/products/kitchen/glassware" },
+          { label: "Bottles & jars", href: "/products/kitchen/bottles-jars" },
+          { label: "Cutlery", href: "/products/kitchen/cutlery" },
+          { label: "Accessories", href: "/products/kitchen/accessories" },
         ],
       },
+
       {
         title: "Kids",
-        seeAll: "/en/en/o/kids",
+        seeAll: "/products/kids",
         items: [
-          { label: "Baby furniture", href: "/en/en/o/baby-furniture" },
-          { label: "Childrens decor", href: "/en/en/o/childrens-decor" },
-          { label: "Kids accessories", href: "/en/en/o/kids-accessories" },
-          { label: "Newborn", href: "/en/en/o/newborn" },
+          { label: "Baby furniture", href: "/products/kids/baby-furniture" },
+          { label: "Children's decor", href: "/products/kids/childrens-decor" },
+          {
+            label: "Kids accessories",
+            href: "/products/kids/kids-accessories",
+          },
+          { label: "Newborn", href: "/products/kids/newborn" },
         ],
       },
+
       {
         title: "Teens",
-        seeAll: "/en/en/o/teens",
+        seeAll: "/products/teens",
         items: [
-          { label: "Teens furniture", href: "/en/en/o/teens-furniture" },
-          { label: "Textiles for teens", href: "/en/en/o/textiles-for-teens" },
-          { label: "Lighting for teens", href: "/en/en/o/lighting-for-teens" },
+          { label: "Teens furniture", href: "/products/teens/furniture" },
+          { label: "Textiles for teens", href: "/products/teens/textiles" },
+          { label: "Lighting for teens", href: "/products/teens/lighting" },
           {
-            label: "Room décor and accessories for teens",
-            href: "/en/en/o/room-decor-accessories-teens",
+            label: "Room décor & accessories",
+            href: "/products/teens/room-accessories",
           },
         ],
       },
-      { title: "Pets", seeAll: "/en/en/pets", items: [] },
+
+      {
+        title: "Pets",
+        seeAll: "/products/pets",
+        items: [
+          { label: "Pet furniture", href: "/products/pets/furniture" },
+          { label: "Pet beds", href: "/products/pets/beds" },
+          { label: "Pet accessories", href: "/products/pets/accessories" },
+        ],
+      },
+
       {
         title: "Selected Collection",
-        seeAll: "/en/en/s/selected-collection",
-        items: [],
+        seeAll: "/products/selected-collection",
+        items: [
+          {
+            label: "Top picks",
+            href: "/products/selected-collection/top-picks",
+          },
+          {
+            label: "Limited edition",
+            href: "/products/selected-collection/limited",
+          },
+          {
+            label: "Design icons",
+            href: "/products/selected-collection/design-icons",
+          },
+        ],
       },
-      { title: "Gift Card", seeAll: "/en/en/gift-card/", items: [] },
+
+      {
+        title: "Gift Card",
+        seeAll: "/products/gift-card",
+        items: [
+          { label: "Digital gift card", href: "/products/gift-card/digital" },
+          { label: "Physical gift card", href: "/products/gift-card/physical" },
+        ],
+      },
     ],
   },
-
-  // inspiration: {
-  //   trending: [
-  //     {
-  //       label: "Here to Stay",
-  //       href: "/en/en/e/here-to-stay",
-  //       image:
-  //         "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //     },
-  //     { label: "For Every Season", href: "/en/en/s/for-every-season" },
-  //     { label: "Selected Collection", href: "/en/en/s/selected-collection" },
-  //     {
-  //       label: "Kave Gallery · Our art gallery",
-  //       href: "/en/en/e/kave-gallery",
-  //     },
-  //   ],
-  //   favourites: [
-  //     { label: "Melvar Collection", href: "/en/en/c/melvar" },
-  //     { label: "Bosca Collection", href: "/en/en/c/bosca" },
-  //     { label: "Granite Collection", href: "/en/en/c/granite" },
-  //     { label: "Somar Collection", href: "/en/en/c/somar" },
-  //     { label: "Norlen", href: "/en/en/c/norlen" },
-  //     { label: "Veliro", href: "/en/en/c/veliro" },
-  //     { label: "Tarsel", href: "/en/en/c/tarsel" },
-  //     { label: "Zavira", href: "/en/en/c/zavira" },
-  //     { label: "Nuvira", href: "/en/en/c/nuvira" },
-  //     { label: "Litto modular shelves", href: "/en/en/litto-modular-shelves/" },
-  //   ],
-  //   gallery: [
-  //     {
-  //       label: "Patricia Varea Milan",
-  //       href: "/en/en/kave-gallery/artist/vareamilan",
-  //     },
-  //     {
-  //       label: "Ellande Jaureguiberry",
-  //       href: "/en/en/kave-gallery/artist/ellande",
-  //     },
-  //     { label: "Bullarsson", href: "/en/en/kave-gallery/artist/bullarsson" },
-  //     { label: "Paula Cabral", href: "/en/en/kave-gallery/artist/paulacabral" },
-  //     { label: "Blannim", href: "/en/en/kave-gallery/artist/blancani" },
-  //     { label: "Rita Paupério", href: "/en/en/kave-gallery/artist/ritapau" },
-  //     {
-  //       label: "De La Jardin",
-  //       href: "/en/en/kave-gallery/artist/de_la_jardin",
-  //     },
-  //     {
-  //       label: "Teresa Berger",
-  //       href: "/en/en/kave-gallery/artist/teresaberger",
-  //     },
-  //     { label: "Areté d'Empordà", href: "/en/en/kave-gallery/artist/arete" },
-  //     { label: "Mariana Baertl", href: "/en/en/kave-gallery/artist/mariana" },
-  //     {
-  //       label: "Andrea Santamarina",
-  //       href: "/en/en/kave-gallery/artist/santamarina",
-  //     },
-  //     { label: "Sevensa Estudio", href: "/en/en/kave-gallery/artist/sevensa" },
-  //     {
-  //       label: "Justino del Casar",
-  //       href: "/en/en/kave-gallery/artist/justino_casa",
-  //     },
-  //     {
-  //       label: "Carmen Martini",
-  //       href: "/en/en/kave-gallery/artist/carmen_marti",
-  //     },
-  //     { label: "Javier Mariscal", href: "/en/en/kave-gallery/artist/mariscal" },
-  //     { label: "Paul Anton", href: "/en/en/kave-gallery/artist/paul_anton" },
-  //     {
-  //       label: "Gabriela Meunié",
-  //       href: "/en/en/kave-gallery/artist/gabriela_meu",
-  //     },
-  //     { label: "Bleg", href: "/en/en/kave-gallery/artist/bleg___pen" },
-  //     { label: "Regina Dejiménez", href: "/en/en/kave-gallery/artist/regina" },
-  //   ],
-  // },
-
-  //   inspiration: {
-  //     trending: [
-  //       {
-  //         label: "Here to Stay",
-  //         href: "/en/en/e/here-to-stay",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "For Every Season",
-  //         href: "/en/en/s/for-every-season",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Selected Collection",
-  //         href: "/en/en/s/selected-collection",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Kave Gallery · Our art gallery",
-  //         href: "/en/en/e/kave-gallery",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //     ],
-
-  //     favourites: [
-  //       {
-  //         label: "Melvar Collection",
-  //         href: "/en/en/c/melvar",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Bosca Collection",
-  //         href: "/en/en/c/bosca",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Granite Collection",
-  //         href: "/en/en/c/granite",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Somar Collection",
-  //         href: "/en/en/c/somar",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Norlen",
-  //         href: "/en/en/c/norlen",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Veliro",
-  //         href: "/en/en/c/veliro",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Tarsel",
-  //         href: "/en/en/c/tarsel",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Zavira",
-  //         href: "/en/en/c/zavira",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Nuvira",
-  //         href: "/en/en/c/nuvira",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Litto modular shelves",
-  //         href: "/en/en/litto-modular-shelves/",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //     ],
-
-  //     gallery: [
-  //       {
-  //         label: "Patricia Varea Milan",
-  //         href: "/en/en/kave-gallery/artist/vareamilan",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Ellande Jaureguiberry",
-  //         href: "/en/en/kave-gallery/artist/ellande",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Bullarsson",
-  //         href: "/en/en/kave-gallery/artist/bullarsson",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Paula Cabral",
-  //         href: "/en/en/kave-gallery/artist/paulacabral",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Blannim",
-  //         href: "/en/en/kave-gallery/artist/blancani",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Rita Paupério",
-  //         href: "/en/en/kave-gallery/artist/ritapau",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "De La Jardin",
-  //         href: "/en/en/kave-gallery/artist/de_la_jardin",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Teresa Berger",
-  //         href: "/en/en/kave-gallery/artist/teresaberger",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Areté d'Empordà",
-  //         href: "/en/en/kave-gallery/artist/arete",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Mariana Baertl",
-  //         href: "/en/en/kave-gallery/artist/mariana",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Andrea Santamarina",
-  //         href: "/en/en/kave-gallery/artist/santamarina",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Sevensa Estudio",
-  //         href: "/en/en/kave-gallery/artist/sevensa",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Justino del Casar",
-  //         href: "/en/en/kave-gallery/artist/justino_casa",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Carmen Martini",
-  //         href: "/en/en/kave-gallery/artist/carmen_marti",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Javier Mariscal",
-  //         href: "/en/en/kave-gallery/artist/mariscal",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Paul Anton",
-  //         href: "/en/en/kave-gallery/artist/paul_anton",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Gabriela Meunié",
-  //         href: "/en/en/kave-gallery/artist/gabriela_meu",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Bleg",
-  //         href: "/en/en/kave-gallery/artist/bleg___pen",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //       {
-  //         label: "Regina Dejiménez",
-  //         href: "/en/en/kave-gallery/artist/regina",
-  //         image:
-  //           "http://d.media.kavehome.com/image/fetch/w_192,c_fill,ar_1.25,g_auto,f_auto/https://media.kavehome.com/media/menu_items/img-menu-heretostay-01.jpg",
-  //       },
-  //     ],
-  //   },
 
   inspiration: {
     trending: [

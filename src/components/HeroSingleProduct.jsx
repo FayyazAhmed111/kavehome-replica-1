@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -19,10 +19,89 @@ import { Info } from "lucide-react";
 import { IoClose } from "react-icons/io5";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import FullGallery from "./FullGallery";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { IoHeart } from "react-icons/io5";
 
-const Hero = ({ openSection, setOpenSection }) => {
+
+const HeroSingleProduct = ({ openSection, setOpenSection }) => {
+
+  const singleProduct = {
+    id: "S81330ZF06",
+    name: "Veliro",
+    description:
+      "Veliro green velvet 3-seater sofa with black steel legs 240cm FSC Mix Credit",
+    price: "1,695 €",
+    sku: "S81330ZF06",
+    tag: "NEW IN",
+    fabrics: [
+      { name: "Saima Ecru", code: "MTK0284" },
+      { name: "Zafor Green", code: "MTK000ZF06" },
+      { name: "Austin Beige", code: "MTK0236" },
+      { name: "Austin Ecru", code: "MTK0235" },
+      { name: "Austin Dark Blue", code: "MTK0354" },
+    ],
+    variants: [
+      {
+        id: 0,
+        title: "2-seater sofa",
+        subtitle: "2-seater sofa",
+        size: "210 cm",
+        image:
+          "https://d.media.kavehome.com/image/upload/w_120,c_pad,ar_1,f_auto/v1755076521/entities/model-variants/S81330.png",
+      },
+      {
+        id: 1,
+        title: "3-seater sofa",
+        subtitle: "3-seater sofa",
+        size: "240 cm",
+        image:
+          "https://d.media.kavehome.com/image/upload/w_120,c_pad,ar_1,f_auto/v1755076521/entities/model-variants/S81330.png",
+      },
+      {
+        id: 2,
+        title: "Footrest",
+        subtitle: "Footrest",
+        size: "85 x 90 cm",
+        image:
+          "https://d.media.kavehome.com/image/upload/w_120,c_pad,ar_1,f_auto/v1755076521/entities/model-variants/S81330.png",
+      },
+    ],
+    gallery: [
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
+        alt: "Veliro front view",
+        overlay3D: true,
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_3:4,g_auto,f_auto/v1754907484/ambiences/A25S107_018.jpg",
+        alt: "Veliro ambience tall",
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
+        alt: "Veliro detail arm",
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1754907497/ambiences/A25S107_020.jpg",
+        alt: "Veliro in library ambience",
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360640/products/S81330ZF06_1D02.jpg",
+        alt: "Veliro cushion close-up",
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360649/products/S81330ZF06_1V02.jpg",
+        alt: "Veliro perspective left",
+      },
+      {
+        src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360641/products/S81330ZF06_1D03.jpg",
+        alt: "Veliro base and legs close-up",
+      },
+    ],
+  };
+
   const [openGallery, setOpenGallery] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isWishlisted, setIsWishlisted] = useState(true)
 
   const { scrollY } = useScroll()
 
@@ -34,14 +113,6 @@ const Hero = ({ openSection, setOpenSection }) => {
     target: containerRef,
     offset: ["start start", "end end"]
   })
-  // [0, 0.02, 0.75, 1]  // starts almost instantly
-
-  // const detailsY = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.02, 0.75, 1],  // start earlier at ~8%
-  //   [0, 0, 400, 400]
-  // )
-
   const detailsY = useTransform(
     scrollY,
     [10, 500],
@@ -54,46 +125,6 @@ const Hero = ({ openSection, setOpenSection }) => {
     damping: 20,
     mass: 0.4
   })
-
-  const galleryTiles = [
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360650/products/S81330ZF06_1V01.jpg",
-      alt: "Veliro front view",
-      overlay3D: true,
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_1200,c_fill,ar_3:4,g_auto,f_auto/v1754907484/ambiences/A25S107_018.jpg",
-      alt: "Veliro ambience tall",
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360639/products/S81330ZF06_1D01.jpg",
-      alt: "Veliro detail arm",
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1754907497/ambiences/A25S107_020.jpg",
-      alt: "Veliro in library ambience",
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360640/products/S81330ZF06_1D02.jpg",
-      alt: "Veliro cushion close-up",
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360649/products/S81330ZF06_1V02.jpg",
-      alt: "Veliro perspective left",
-    },
-    {
-      src: "https://d.media.kavehome.com/image/upload/w_900,c_fill,ar_0.8,g_auto,f_auto/v1753360641/products/S81330ZF06_1D03.jpg",
-      alt: "Veliro base and legs close-up",
-    },
-  ];
-
-  const fabricOptions = [
-    { name: "Saima Ecru", code: "MTK0284" },
-    { name: "Zafor Green", code: "MTK000ZF06" },
-    { name: "Austin Beige", code: "MTK0236" },
-    { name: "Austin Ecru", code: "MTK0235" },
-    { name: "Austin Dark Blue", code: "MTK0354" },
-  ];
 
   const relatedProducts = [
     {
@@ -150,7 +181,6 @@ const Hero = ({ openSection, setOpenSection }) => {
   };
 
 
-
   return (
     // <section className="relative md:flex-row flex-col flex lg:gap-4 md:gap-4 gap-0">
     <section
@@ -179,7 +209,8 @@ const Hero = ({ openSection, setOpenSection }) => {
           <span>3 seater sofas</span>
         </a>
       </nav>
-      {/* LEFT Gallery */}
+
+      {/* LEFT Gallery Section */}
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
@@ -199,7 +230,7 @@ const Hero = ({ openSection, setOpenSection }) => {
               className="w-full"
             >
               <CarouselContent className="-ml-0">
-                {galleryTiles.map((tile, idx) => (
+                {singleProduct.gallery.map((tile, idx) => (
                   <CarouselItem key={idx} className="pl-0 basis-full">
                     <div className="aspect-[0.8] w-full overflow-hidden bg-neutral-100">
                       <img
@@ -232,25 +263,8 @@ const Hero = ({ openSection, setOpenSection }) => {
                  md:[&>*]:aspect-[0.8]
                  md:[&>*]:overflow-hidden"
             >
-              {/* {galleryTiles.map((t, idx) => (
-                <div
-                  key={idx}
-                  className="detail-gallery_galleryItem__PwmAx relative  min-w-[auto]
-                     scroll-snap-start [scroll-snap-stop:always]
-                     bg-[var(--kh-neutral-10)] md:min-w-auto"
-                >
-                  <button className=" aspect-[inherit] cursor-pointer">
-                    <img
-                      src={t.src}
-                      alt={t.alt}
-                      className="h-full w-full  object-cover"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </button>
-                </div>
-              ))} */}
-              {galleryTiles.map((t, idx) => (
+
+              {singleProduct.gallery.map((t, idx) => (
                 <div
                   key={idx}
                   className="detail-gallery_galleryItem__PwmAx relative min-w-[auto]
@@ -276,8 +290,6 @@ const Hero = ({ openSection, setOpenSection }) => {
               ))}
             </div>
           </div>
-
-          {/* View more images button */}
           <div className="flex items-center justify-center mt-3">
             <button className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-medium hover:border-neutral-400">
               View more images
@@ -286,12 +298,7 @@ const Hero = ({ openSection, setOpenSection }) => {
         </div>
       </motion.div>
 
-      {/* Details Product */}
-      {/* <motion.div
-
-        className="xl:my-12 xl:mx-auto xl:max-w-[512px]
-            lg:max-w-[460px] md:max-w-[380px] p-4 md:p-0 "
-      > */}
+      {/* Right Details Product */}
       <motion.div
         ref={detailsRef}
         style={{ y: detailsY }}
@@ -302,52 +309,46 @@ const Hero = ({ openSection, setOpenSection }) => {
 
         <div className="lg:sticky lg:top-[72px] space-y-2">
           <div className="flex flex-wrap gap-2">
-            <span className="bg-[#f0efeb] px-3 py-1 text-[12px] font-poppins  uppercase tracking-wide text-black">
-              NEW IN
-            </span>
+            {singleProduct.tag && (
+              <span className="bg-[#f0efeb] px-3 py-1 text-[12px] font-poppins uppercase tracking-wide text-black">
+                {singleProduct.tag}
+              </span>
+            )}
           </div>
 
           {/* Title */}
           <div className="">
             <div className="flex justify-between ">
               <h2 className="text-[46px] font-kave-haffertext font-normal">
-                Veliro
+                {singleProduct.name}
               </h2>
-              <button>
-                <svg
-                  role="graphics-symbol"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-neutral-900"
-                >
-                  <path
-                    d="M3.498 12.053 12.125 21l8.627-8.947a5.405 5.405 0 0 0 1.498-3.75C22.25 5.374 19.96 3 17.136 3a5.023 5.023 0 0 0-3.616 1.553L12.125 6 10.73 4.553A5.023 5.023 0 0 0 7.114 3C4.29 3 2 5.374 2 8.303c0 1.407.539 2.756 1.498 3.75Z"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+
+              <button
+                onClick={() => setIsWishlisted(!isWishlisted)}
+                className="cursor-pointer transition-transform hover:scale-110"
+              >
+                {isWishlisted ? (
+                  <IoHeart size={26} className="text-red-500 fill-red-500" />
+                ) : (
+                  <IoMdHeartEmpty size={26} className="text-neutral-700" />
+                )}
               </button>
+
+
             </div>
 
             <h1 className="text-[14px] font-poppins font-normal text-neutral-800 ">
-              Veliro green velvet 3-seater sofa with black steel legs 240cm FSC
-              Mix Credit
+              {singleProduct.description}
             </h1>
+
           </div>
 
           {/* Price + finance */}
           <div className="">
             <div className="text-[27px] font-normal font-kave-haffertext">
-              1,695 €
+              {singleProduct.price}
             </div>
-            {/* <div className="text-sm text-neutral-600">
-                    Split your payment into easy instalments.
-                    <button className="ml-2 underline">More information</button>
-                  </div> */}
+
           </div>
 
           {/* Variant selector */}
@@ -471,7 +472,7 @@ const Hero = ({ openSection, setOpenSection }) => {
 
           {/* Materialsssssssssss Fabric row */}
           <div className="flex gap-2 overflow-x-auto pb-2">
-            {fabricOptions.map((f, i) => (
+            {singleProduct.fabrics.map((f, i) => (
               <a
                 key={f.code}
                 href={`?material_fabric=kavehome:${f.code}`}
@@ -752,22 +753,6 @@ const Hero = ({ openSection, setOpenSection }) => {
         </div>
 
         {/* “Complete your look” — positioned under sticky info (right column) */}
-        {/* <div className="mt-10">
-                <h3 className="mb-4 text-xl font-light">Complete your look</h3>
-                <div className="flex gap-4 overflow-x-auto pb-2">
-                  {relatedProducts.map((p, i) => (
-                    <a key={i} href={p.href} className="w-48 shrink-0">
-                      <div className="mb-3 aspect-[3/4] overflow-hidden bg-neutral-100">
-                        <img src={p.image} alt={p.name} className="h-full w-full object-cover" loading="lazy" />
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-neutral-700 line-clamp-2">{p.name}</div>
-                        <div className="text-sm font-medium">{p.price}</div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div> */}
         <div
           className="relative mt-10 group"
           onMouseEnter={() => setIsHovered(true)}
@@ -843,4 +828,4 @@ const Hero = ({ openSection, setOpenSection }) => {
   );
 };
 
-export default Hero;
+export default HeroSingleProduct;

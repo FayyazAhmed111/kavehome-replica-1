@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Hero from "../../../../components/Hero";
 
 import {
   Carousel,
@@ -9,7 +8,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from "../../../../components/ui/carousel";
+} from "@/components/ui/carousel";
 import {
   Drawer,
   DrawerClose,
@@ -17,9 +16,13 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "../../../../components/ui/drawer";
+} from "@/components/ui/drawer";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import HeroSingleProduct from "@/components/HeroSingleProduct";
+
+
 export default function Page({ params }) {
 
   const productSections = [
@@ -252,7 +255,7 @@ export default function Page({ params }) {
         )}
       </div> */}
       {/*------------- LAtesst hERO SECTION ----------------------*/}
-      <Hero
+      <HeroSingleProduct
         openSection={openSection}
         setOpenSection={setOpenSection} />
 
@@ -342,7 +345,7 @@ export default function Page({ params }) {
               className="w-full h-full  object-cover"
               loading="lazy"
               decoding="async"
-            /> 
+            />
           </div>
         </div>
       </section>

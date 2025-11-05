@@ -1,7 +1,7 @@
 "use client";
 import { use, useState, useEffect } from "react";
 import { GraphQLClient } from "graphql-request";
-import { GET_PRODUCT_BY_SLUG } from "../../../../lib/queries/getProduct";
+import { GET_PRODUCT_BY_SLUG } from "../../../../../lib/queries/getProduct";
 
 const client = new GraphQLClient(process.env.NEXT_PUBLIC_WP_GRAPHQL_URL);
 
