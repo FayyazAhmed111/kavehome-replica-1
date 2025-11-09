@@ -112,9 +112,9 @@ export function FilterDrawer({ children }) {
     return (
         <Drawer direction="right" open={isOpen} onOpenChange={setIsOpen}>
             <DrawerTrigger asChild>{children}</DrawerTrigger>
-            <DrawerContent className="right-0 top-0 z-[1000] fixed h-full w-full min-w-[720px] rounded-none border-l bg-white shadow-xl p-0">
+            <DrawerContent className="right-0 top-0 z-[1000] fixed h-full w-full md:min-w-[720px] min-w-full rounded-none border-l bg-white shadow-xl p-0">
                 <div className="flex h-full flex-col">
-                    <div className="flex items-center justify-between px-[120px] pt-[64px] pb-4">
+                    <div className="flex items-center justify-between md:px-[120px] px-[24px] pt-[64px] pb-4">
                         <h2 className="text-base font-kave-haffertext tracking-tight">Filters</h2>
                         <DrawerClose className="rounded-sm opacity-70 transition-opacity hover:opacity-100">
                             <XIcon />
@@ -123,7 +123,7 @@ export function FilterDrawer({ children }) {
                     </div>
 
                     <div className="flex-1 overflow-y-auto">
-                        <div className="px-[120px]">
+                        <div className="md:px-[120px] px-[24px]">
                             <div className="border-b py-6">
                                 <div className="mb-4 flex items-center justify-between">
                                     <h3 className="text-xs font-semibold uppercase tracking-wider">SORT BY</h3>
@@ -207,7 +207,7 @@ export function FilterDrawer({ children }) {
                         </div>
                     </div>
 
-                    <div className="border-t px-[120px] py-[32px]">
+                    <div className="border-t md:px-[120px] px-[24px] py-[32px]">
                         <div className="flex gap-3">
                             <button className="flex-1 rounded border border-neutral-300 bg-white px-6 py-3 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50">
                                 Clear filters
