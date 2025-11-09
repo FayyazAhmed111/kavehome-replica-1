@@ -5,6 +5,8 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: false,
+    optimizeFonts: false,
+    optimizePackageImports: false,
    },
 };
 
