@@ -406,3 +406,13 @@ kh-icon-button.lg {
 }
 
 
+
+.font-haffer pre {
+  font-family: var(--font-kave-haffertext) !important;
+}
+/* Bold */
+.font-haffer {
+  font-family: var(--font-kave-haffertext) !important;
+  font-weight: 600;
+  font-size: 14px;
+}

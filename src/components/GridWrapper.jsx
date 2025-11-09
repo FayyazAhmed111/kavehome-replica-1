@@ -91,19 +91,18 @@ export default function GridWrapper({ categoryData, category }) {
                     <div key={product.id} className="relative">
                         <div className="block overflow-hidden transition object-cover relative group">
                             <ProductCarousel product={product} category={category} viewMode={viewMode} />
-
-                            <div className="p-4 relative z-[2]">
-                                <h2 className="font-semibold text-lg ">{product.name}</h2>
+                            <div className="p-3 relative z-[2]">
+                                <h2 className="text-[16px] md:text-[17px] font-light font-kave-haffertext mb-1">{product.name}</h2>
 
                                 {product.shortDescription && (
                                     <div
-                                        className="text-gray-600 text-sm mt-2 line-clamp-2"
+                                        className="text-gray-600 text-[13px] font-haffer"
                                         dangerouslySetInnerHTML={{ __html: product.shortDescription }}
                                     />
                                 )}
 
                                 <div
-                                    className="text-gray-700  font-kave-haffertext"
+                                    className="text-gray-700  font-haffer "
                                     dangerouslySetInnerHTML={{ __html: product.price }}
                                 />
                             </div>
