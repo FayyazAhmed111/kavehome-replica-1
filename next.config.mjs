@@ -4,9 +4,7 @@ const nextConfig = {
     NEXT_PUBLIC_WP_GRAPHQL_URL: 'https://sienna-raccoon-358091.hostingersite.com/graphql',
   },
   experimental: {
-    optimizeCss: false,
-    optimizeFonts: false,
-    optimizePackageImports: false,
+    optimizeCss: false
    },
 };
 
