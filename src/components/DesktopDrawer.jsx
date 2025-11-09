@@ -149,7 +149,7 @@ export default function DesktopDrawer({
                                             exit="exit"
                                             className="px-12 mt-20"
                                         >
-                                            <h3 className="text-[32px] mb-6 font-semibold tracking-tight text-black">
+                                            <h3 className="text-[32px] mb-6 font-normal font-kave-haffertext tracking-tight text-black">
                                                 Highlights
                                             </h3>
                                             <ul className="flex flex-col gap-4 text-[16px] text-black/80">
@@ -174,7 +174,7 @@ export default function DesktopDrawer({
                                             exit="exit"
                                             className="px-12 mt-20"
                                         >
-                                            <h3 className="text-[32px] mb-6 font-semibold tracking-tight text-black">
+                                            <h3 className="text-[32px] mb-6 font-normal font-kave-haffertext tracking-tight text-black">
                                                 Products
                                             </h3>
                                             <ul className="text-[16px] mt-6 text-black/90">
@@ -206,7 +206,7 @@ export default function DesktopDrawer({
                                             exit="exit"
                                             className="px-12 mt-20 overflow-y-auto h-full"
                                         >
-                                            <h3 className="text-[32px] mb-6 font-semibold text-black">
+                                            <h3 className="text-[32px] mb-6 font-normal font-kave-haffertext tracking-tight text-black">
                                                 Inspiration
                                             </h3>
 
@@ -241,7 +241,7 @@ export default function DesktopDrawer({
                                             exit="exit"
                                             className="px-12 mt-20 overflow-y-auto h-full"
                                         >
-                                            <h3 className="text-[32px] mb-6 font-semibold text-black">
+                                            <h3 className="text-[32px] mb-6 font-normal font-kave-haffertext tracking-tight text-black">
                                                 Kave Gallery
                                             </h3>
                                             <ul className="space-y-4 text-[16px] text-black/80">
@@ -284,7 +284,7 @@ export default function DesktopDrawer({
                                         </div> */}
 
                                         <div className="flex items-center justify-between">
-                                            <h4 className="text-3xl font-normal tracking-tight text-black">
+                                            <h4 className="text-[32px] mb-6 font-normal font-kave-haffertext tracking-tight text-black">
                                                 {activeColumn.title}
                                             </h4>
                                             <a

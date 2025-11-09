@@ -346,6 +346,30 @@ input[type="radio"] {
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
+kh-icon-button.lg {
+    /* padding: 12px; */
+}
+
+.kh-icon-button.solid {
+    border: none;
+}
+
+.facets_layoutControls__7Mpbf > button {
+    padding: 8px;
+}
+
+.kh-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff; 
+    border-radius: 50%;
+    border: none;
+    height: min-content;
+    position: relative;
+}
+
+
 #wishlists .skeleton__content, .wishlists-grid {
     display: grid;
     gap: 24px;
@@ -380,3 +404,5 @@ input[type="radio"] {
         grid-template-columns: repeat(5, var(--wishlist-grid-column-width));
     }
 }
+
+

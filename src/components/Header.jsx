@@ -23,7 +23,7 @@ const Header = ({ setDrawerOpen, setActiveTab, setActiveColumnIndex }) => {
         pathname.includes("/accounts/register") ||
         pathname.includes("/cart")
         ||
-        /^\/products\/[^/]+\/[^/]+\/[^/]+$/.test(pathname) ||
+        /^\/products\/[^/]+(\/[^/]+)?$/.test(pathname)
         pathname.includes("/wishlists")
         || pathname.includes("/checkout")
     if (pathname.includes("/checkout")) return null; 
