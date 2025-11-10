@@ -45,18 +45,18 @@ export const kaveHaffer = localFont({
   display: "swap",
 });
 
-export const kaveHafferText = localFont({
+export const kaveHafferRegular = localFont({
   src: [
     {
-      path: "../fonts/HafferXH-TRIAL-Medium.woff2",
+      path: "../fonts/KaveHafferDisplay-Regular.woff2",
       weight: "400",
       style: "normal",
     },
-    {
-      path: "../fonts/HafferXH-TRIAL-SemiBold.woff2",
-      weight: "500",
-      style: "normal",
-    },
+    // {
+    //   path: "../fonts/HafferXH-TRIAL-SemiBold.woff2",
+    //   weight: "500",
+    //   style: "normal",
+    // },
   ],
   variable: "--font-kave-haffertext",
   display: "swap",
@@ -65,11 +65,23 @@ export const kaveHafferText = localFont({
 export const martinaRegular = localFont({
   src: [
     {
-      path: "../fonts/MartinBecker-Regular.woff2",
+      path: "../fonts/Martina-Regular.woff2",
       weight: "400",
       style: "normal",
     },
   ],
-  variable: "--font-martina",
+  variable: "--font-martina-regular",
+  display: "swap",
+});
+
+export const martinaBold = localFont({
+  src: [
+    {
+      path: "../fonts/Martina-Bold.woff",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-martina-bold",
   display: "swap",
 });

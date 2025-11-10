@@ -19,12 +19,12 @@ export default function CategoryPage({ params }) {
       <div className="xl:max-w-[90%] mx-auto w-full">
         {/* ---- your heading block ---- */}
         <div className="pt-[32px] flex flex-col">
-          <h1 className="xl:p-0 md:text-[46px] font-kave-haffertext text-left mb-[12px] font-normal">
+          <h1 className="xl:p-0 md:text-[46px] font-kave-haffertext text-left mb-[12px] md:px-6 font-normal">
             {categoryData.name}
           </h1>
-          <div className="xl:p-0 md:max-w-[612px] mb-[24px] text-[15px] text-neutral-100">
+          <div className="xl:p-0 md:max-w-[612px] mb-[24px] md:px-6 text-[15px] text-neutral-100">
             <div>
-              <p className="font-kave-haffer">{categoryData.description}</p>
+              <p className=" font-martina-regular">{categoryData.description}</p>
             </div>
           </div>
         </div>

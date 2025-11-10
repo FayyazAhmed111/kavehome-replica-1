@@ -9,7 +9,8 @@
   --font-noto-sans: var(--font-notosans);
   --font-kave-haffer: var(--font-kave-haffer);
   --font-kave-haffertext: var(--font-kave-haffertext);
-  --font-martina: var(--font-martina), sans-serif;
+  --font-martina-regular: var(--font-martina-regular);
+  --font-martina-bold: var(--font-martina-bold);
 
   /* Primary Colors */
   --color-primary: #000;
@@ -413,6 +414,12 @@ kh-icon-button.lg {
 /* Bold */
 .font-haffer {
   font-family: var(--font-kave-haffertext) !important;
-  font-weight: 600;
   font-size: 14px;
+color: var(--color-neutral-700);
+}
+.font-haffer.bold {
+  font-family: var(--font-kave-haffertext) !important;
+  font-size: 14px;
+  font-weight: 600  !important;
+color: var(--color-neutral-700);
 }
